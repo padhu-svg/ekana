@@ -81,7 +81,7 @@ const Home = () => {
                 className="w-full pl-16 pr-6 py-5 text-xl rounded-full text-white focus:outline-none focus:ring-4 focus:ring-green-300 shadow-2xl font-medium border-2 border-white"
               />
               <button className="absolute right-3 top-1/2 transform -translate-y-1/2 btn-primary">
-                Search Now
+                Search
               </button>
             </div>
           </motion.div>
