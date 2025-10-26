@@ -41,7 +41,7 @@ const AdminDashboard = () => {
   const fetchDashboardData = async () => {
     try {
       const token = localStorage.getItem('admin_token');
-      const response = await fetch('http://localhost:8000/api/v1/admin/dashboard', {
+      const response = await fetch('https://e-ka-na-backend.vercel.app/api/v1/admin/dashboard', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
   const fetchPlaces = async () => {
     try {
       const token = localStorage.getItem('admin_token');
-      const response = await fetch('http://localhost:8000/api/v1/admin/places', {
+      const response = await fetch('https://e-ka-na-backend.vercel.app/api/v1/admin/places', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -91,7 +91,7 @@ const AdminDashboard = () => {
           const formData = new FormData();
           formData.append('image', img.file);
           
-          const uploadResponse = await fetch('http://localhost:8000/api/v1/upload', {
+          const uploadResponse = await fetch('https://e-ka-na-backend.vercel.app/api/v1/upload', {
             method: 'POST',
             body: formData
           });
@@ -112,7 +112,7 @@ const AdminDashboard = () => {
 
       // Save place data to database
       const token = localStorage.getItem('admin_token');
-      const response = await fetch('http://localhost:8000/api/v1/admin/places', {
+      const response = await fetch('https://e-ka-na-backend.vercel.app/api/v1/admin/places', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ const AdminDashboard = () => {
         const formData = new FormData();
         formData.append('image', editingPlace.newImage.file);
         
-        const uploadResponse = await fetch('http://localhost:8000/api/v1/upload', {
+        const uploadResponse = await fetch('https://e-ka-na-backend.vercel.app/api/v1/upload', {
           method: 'POST',
           body: formData
         });
@@ -174,7 +174,7 @@ const AdminDashboard = () => {
       const token = localStorage.getItem('admin_token');
       const { newImage, ...updateData } = editingPlace;
       
-      const response = await fetch(`http://localhost:8000/api/v1/admin/places/${editingPlace.id}`, {
+      const response = await fetch(`https://e-ka-na-backend.vercel.app/api/v1/admin/places/${editingPlace.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -208,7 +208,7 @@ const AdminDashboard = () => {
 
     try {
       const token = localStorage.getItem('admin_token');
-      const response = await fetch(`http://localhost:8000/api/v1/admin/places/${placeId}`, {
+      const response = await fetch(`https://e-ka-na-backend.vercel.app/api/v1/admin/places/${placeId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

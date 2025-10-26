@@ -17,7 +17,7 @@ const AdminLogin = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/admin/login', credentials);
+      const response = await axios.post('https://e-ka-na-backend.vercel.app/api/v1/admin/login', credentials);
       localStorage.setItem('admin_token', response.data.access_token);
       navigate('/admin/dashboard');
     } catch (err) {

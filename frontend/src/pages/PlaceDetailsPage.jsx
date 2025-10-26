@@ -14,7 +14,7 @@ const PlaceDetailsPage = () => {
     const fetchPlaceDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:8000/api/v1/search/places/${placeId}`);
+        const response = await fetch(`https://e-ka-na-backend.vercel.app/api/v1/search/places/${placeId}`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch place details');

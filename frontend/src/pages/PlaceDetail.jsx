@@ -78,7 +78,7 @@ const PlaceDetail = () => {
       
       // Try API first, fallback if fails
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/search/places/${id}`);
+        const response = await axios.get(`https://e-ka-na-backend.vercel.app/api/v1/search/places/${id}`);
         if (response.data.success && response.data.place) {
           setPlaceData(response.data.place);
         } else {
