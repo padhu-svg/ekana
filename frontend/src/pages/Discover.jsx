@@ -12,8 +12,8 @@ const Discover = () => {
   });
   const [showFilters, setShowFilters] = useState(false);
 
-  const categories = ['Heritage', 'Hills', 'Wildlife', 'Coast', 'Culture', 'Eco-Tourism'];
-  const districts = ['Bangalore', 'Mysore', 'Hampi', 'Coorg', 'Mangalore', 'Udupi'];
+  const [categories, setCategories] = useState([]);
+  const [districts, setDistricts] = useState([]);
 
   useEffect(() => {
     fetchDestinations();
@@ -23,42 +23,19 @@ const Discover = () => {
     try {
       setLoading(true);
       const response = await destinationsAPI.getAll(filters);
-      setDestinations(response.data || []);
+      const places = response.data || [];
+      setDestinations(places);
+      
+      // Extract unique categories and districts
+      if (places.length > 0) {
+        const uniqueCategories = [...new Set(places.map(d => d.category))].filter(Boolean);
+        const uniqueDistricts = [...new Set(places.map(d => d.district))].filter(Boolean);
+        setCategories(uniqueCategories);
+        setDistricts(uniqueDistricts);
+      }
     } catch (error) {
       console.error('Error fetching destinations:', error);
-      // Mock data for demo
-      setDestinations([
-        {
-          id: 1,
-          name: 'Hampi',
-          category: 'Heritage',
-          district: 'Hampi',
-          description: 'Ancient ruins and temples showcasing Vijayanagara Empire',
-          images: ['https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500'],
-          best_time: 'Oct-Mar',
-          tags: ['UNESCO', 'History', 'Architecture']
-        },
-        {
-          id: 2,
-          name: 'Coorg',
-          category: 'Hills',
-          district: 'Coorg',
-          description: 'Coffee plantations and misty hills perfect for nature lovers',
-          images: ['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500'],
-          best_time: 'Oct-May',
-          tags: ['Coffee', 'Hills', 'Nature']
-        },
-        {
-          id: 3,
-          name: 'Gokarna',
-          category: 'Coast',
-          district: 'Gokarna',
-          description: 'Pristine beaches and ancient temples by the Arabian Sea',
-          images: ['https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500'],
-          best_time: 'Nov-Mar',
-          tags: ['Beach', 'Temple', 'Sunset']
-        }
-      ]);
+      setDestinations([]);
     } finally {
       setLoading(false);
     }
@@ -81,13 +58,13 @@ const Discover = () => {
               <h1 className="text-3xl font-bold text-gray-900">Discover Karnataka</h1>
               <p className="text-gray-600 mt-2">Explore amazing destinations across the state</p>
             </div>
-            <button
+            {/* <button
               onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center space-x-2 btn-primary"
+              className="flex items-center space-x-2 bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg"
             >
               <Filter className="h-5 w-5" />
               <span>Filters</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -97,42 +74,64 @@ const Discover = () => {
           {/* Filters Sidebar */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: showFilters ? 1 : 0, x: showFilters ? 0 : -20 }}
+            animate={{ opacity: 1, x: 0 }}
             className={`lg:w-1/4 ${showFilters ? 'block' : 'hidden lg:block'}`}
           >
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-4">Filter by Category</h3>
-              <div className="space-y-2">
-                {categories.map(category => (
+            <div className="bg-white rounded-xl shadow-xl p-6 border border-gray-100">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold text-gray-900">Filters</h3>
+                {(filters.category || filters.district) && (
                   <button
-                    key={category}
-                    onClick={() => handleFilterChange('category', category)}
-                    className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
-                      filters.category === category
-                        ? 'bg-forest text-white'
-                        : 'hover:bg-gray-100'
-                    }`}
+                    onClick={() => setFilters({ category: '', district: '' })}
+                    className="text-sm text-red-600 hover:text-red-800 font-medium"
                   >
-                    {category}
+                    Clear All
                   </button>
-                ))}
+                )}
+              </div>
+              
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                  <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                  Category
+                </h4>
+                <div className="space-y-3">
+                  {categories.map(category => (
+                    <button
+                      key={category}
+                      onClick={() => handleFilterChange('category', category)}
+                      className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                        filters.category === category
+                          ? 'bg-green-700 text-white shadow-lg transform scale-105'
+                          : 'bg-gray-50 text-gray-700 hover:bg-green-50 hover:text-green-700 border border-gray-200'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
               </div>
 
-              <h3 className="text-lg font-semibold mb-4 mt-8">Filter by District</h3>
-              <div className="space-y-2">
-                {districts.map(district => (
-                  <button
-                    key={district}
-                    onClick={() => handleFilterChange('district', district)}
-                    className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
-                      filters.district === district
-                        ? 'bg-forest text-white'
-                        : 'hover:bg-gray-100'
-                    }`}
-                  >
-                    {district}
-                  </button>
-                ))}
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+                  District
+                </h4>
+                <div className="space-y-3">
+                  {districts.map(district => (
+                    <button
+                      key={district}
+                      onClick={() => handleFilterChange('district', district)}
+                      className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                        filters.district === district
+                          ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                          : 'bg-gray-50 text-gray-700 hover:bg-blue-50 hover:text-blue-700 border border-gray-200'
+                      }`}
+                    >
+                      {district}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -162,6 +161,7 @@ const Discover = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ y: -5 }}
                     className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer"
+                    onClick={() => window.location.href = `/place/${destination.id}`}
                   >
                     <div className="relative h-48">
                       <img
@@ -192,9 +192,15 @@ const Discover = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center text-gray-500">
                           <Clock className="h-4 w-4 mr-1" />
-                          <span className="text-sm">{destination.best_time}</span>
+                          <span className="text-sm">{destination.best_time || 'Year-round'}</span>
                         </div>
-                        <button className="text-forest font-medium hover:text-forest-light">
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.location.href = `/place/${destination.id}`;
+                          }}
+                          className="text-green-700 font-medium hover:text-green-800 transition-colors"
+                        >
                           Learn More →
                         </button>
                       </div>

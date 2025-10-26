@@ -104,6 +104,89 @@ router.post('/places', authenticateAdmin, async (req, res) => {
   }
 });
 
+// Update place
+router.put('/places/:id', authenticateAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { latitude, longitude, rating, ...otherData } = req.body;
+    
+    const updateData = {
+      ...otherData,
+      ...(latitude && latitude !== '' && { latitude: parseFloat(latitude) }),
+      ...(longitude && longitude !== '' && { longitude: parseFloat(longitude) }),
+      ...(rating && rating !== '' && { rating: parseFloat(rating) })
+    };
+
+    const { data: place, error } = await supabase
+      .from('tourist_places')
+      .update(updateData)
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Supabase update error:', error);
+      return res.status(500).json({ error: 'Failed to update place', details: error.message });
+    }
+
+    res.json(place);
+  } catch (error) {
+    console.error('Update place error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Delete place
+router.delete('/places/:id', authenticateAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // First get the place to access its images
+    const { data: place, error: fetchError } = await supabase
+      .from('tourist_places')
+      .select('images')
+      .eq('id', id)
+      .single();
+
+    if (fetchError || !place) {
+      return res.status(404).json({ error: 'Place not found' });
+    }
+
+    // Delete images from Supabase Storage
+    if (place.images && place.images.length > 0) {
+      for (const imageUrl of place.images) {
+        try {
+          // Extract file path from URL
+          const urlParts = imageUrl.split('/');
+          const fileName = urlParts[urlParts.length - 1];
+          const filePath = `places/${fileName}`;
+          
+          await supabase.storage
+            .from('ekana-images')
+            .remove([filePath]);
+        } catch (storageError) {
+          console.error('Error deleting image:', storageError);
+        }
+      }
+    }
+
+    // Delete place from database
+    const { error: deleteError } = await supabase
+      .from('tourist_places')
+      .delete()
+      .eq('id', id);
+
+    if (deleteError) {
+      return res.status(500).json({ error: 'Failed to delete place' });
+    }
+
+    res.json({ message: 'Place deleted successfully' });
+  } catch (error) {
+    console.error('Delete place error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // Create admin (for initial setup)
 router.post('/create-admin', async (req, res) => {
   try {

@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion';
 import { Search, Mountain, TreePine, Waves, Camera, Users, Leaf } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { destinationsAPI } from '../services/api';
+import SearchBar from '../components/SearchBar';
+import SearchResults from '../components/SearchResults';
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [featuredDestinations, setFeaturedDestinations] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchResults, setSearchResults] = useState([]);
+  const [showSearchResults, setShowSearchResults] = useState(false);
 
   const categories = [
     { name: 'Heritage', icon: Camera, color: 'bg-green-600' },
@@ -14,29 +21,33 @@ const Home = () => {
     { name: 'Eco-Tourism', icon: Leaf, color: 'bg-green-700' },
   ];
 
-  const featuredDestinations = [
-    {
-      id: 1,
-      name: 'Hampi',
-      category: 'Heritage',
-      image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500',
-      description: 'Ancient ruins and temples showcasing rich history'
-    },
-    {
-      id: 2,
-      name: 'Coorg',
-      category: 'Hills',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500',
-      description: 'Coffee plantations and misty hills perfect for nature lovers'
-    },
-    {
-      id: 3,
-      name: 'Gokarna',
-      category: 'Coast',
-      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500',
-      description: 'Pristine beaches and ancient temples by the sea'
-    },
-  ];
+  useEffect(() => {
+    fetchFeaturedDestinations();
+  }, []);
+
+  const fetchFeaturedDestinations = async () => {
+    try {
+      setLoading(true);
+      const response = await destinationsAPI.getAll();
+      const destinations = response.data || [];
+      setFeaturedDestinations(destinations.slice(0, 3));
+    } catch (error) {
+      console.error('Error fetching destinations:', error);
+      setFeaturedDestinations([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearchResults = (results) => {
+    setSearchResults(results);
+    setShowSearchResults(results.length > 0);
+  };
+
+  const closeSearchResults = () => {
+    setShowSearchResults(false);
+    setSearchResults([]);
+  };
 
   return (
     <div className="min-h-screen">
@@ -69,21 +80,15 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-3xl mx-auto"
+            className="max-w-3xl mx-auto relative"
           >
-            <div className="relative">
-              <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 h-7 w-7" />
-              <input
-                type="text"
-                placeholder="Where do you want to explore in Karnataka?"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-16 pr-6 py-5 text-xl rounded-full text-white focus:outline-none focus:ring-4 focus:ring-green-300 shadow-2xl font-medium border-2 border-white"
+            <SearchBar onResults={handleSearchResults} />
+            {showSearchResults && (
+              <SearchResults 
+                results={searchResults} 
+                onClose={closeSearchResults}
               />
-              <button className="absolute right-3 top-1/2 transform -translate-y-1/2 btn-primary">
-                Search
-              </button>
-            </div>
+            )}
           </motion.div>
         </div>
       </section>
@@ -134,36 +139,51 @@ const Home = () => {
             <p className="text-2xl text-gray-700 font-medium">Must-visit places in Karnataka</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {featuredDestinations.map((destination, index) => (
-              <motion.div
-                key={destination.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ y: -15, scale: 1.02 }}
-                className="card overflow-hidden cursor-pointer group"
-              >
-                <div className="relative h-72 overflow-hidden">
-                  <img
-                    src={destination.image}
-                    alt={destination.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-6 left-6">
-                    <span className="bg-green-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      {destination.category}
-                    </span>
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="bg-white rounded-lg shadow-lg animate-pulse">
+                  <div className="h-72 bg-gray-300 rounded-t-lg"></div>
+                  <div className="p-8">
+                    <div className="h-6 bg-gray-300 rounded mb-4"></div>
+                    <div className="h-4 bg-gray-300 rounded"></div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">{destination.name}</h3>
-                  <p className="text-gray-700 text-lg leading-relaxed">{destination.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {featuredDestinations.map((destination, index) => (
+                <motion.div
+                  key={destination.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  whileHover={{ y: -15, scale: 1.02 }}
+                  className="card overflow-hidden cursor-pointer group"
+                  onClick={() => window.location.href = `/place/${destination.id}`}
+                >
+                  <div className="relative h-72 overflow-hidden">
+                    <img
+                      src={destination.images?.[0] || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500'}
+                      alt={destination.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute top-6 left-6">
+                      <span className="bg-green-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                        {destination.category}
+                      </span>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4">{destination.name}</h3>
+                    <p className="text-gray-700 text-lg leading-relaxed">{destination.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

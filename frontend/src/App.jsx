@@ -7,6 +7,7 @@ import Sustainability from './pages/Sustainability';
 import ExploreMap from './pages/ExploreMap';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import PlaceDetails from './pages/PlaceDetails';
 
 function AppContent() {
   const location = useLocation();
@@ -30,6 +31,7 @@ function AppContent() {
         <Route path="/discover" element={<Discover />} />
         <Route path="/map" element={<ExploreMap />} />
         <Route path="/sustainability" element={<Sustainability />} />
+        <Route path="/place/:id" element={<PlaceDetails />} />
       </Routes>
     </PublicLayout>
   );

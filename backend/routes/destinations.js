@@ -1,52 +1,54 @@
 const express = require('express');
 const router = express.Router();
-
-// Mock data for destinations
-const destinations = [
-  {
-    id: 1,
-    name: 'Hampi',
-    category: 'Heritage',
-    district: 'Hampi',
-    description: 'Ancient ruins and temples showcasing Vijayanagara Empire',
-    images: ['https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500'],
-    best_time: 'Oct-Mar',
-    tags: ['UNESCO', 'History', 'Architecture']
-  },
-  {
-    id: 2,
-    name: 'Coorg',
-    category: 'Hills',
-    district: 'Coorg',
-    description: 'Coffee plantations and misty hills perfect for nature lovers',
-    images: ['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500'],
-    best_time: 'Oct-May',
-    tags: ['Coffee', 'Hills', 'Nature']
-  }
-];
+const supabase = require('../config/database');
 
 // GET all destinations
-router.get('/', (req, res) => {
-  const { category, district } = req.query;
-  let filteredDestinations = destinations;
-
-  if (category) {
-    filteredDestinations = filteredDestinations.filter(d => d.category === category);
+router.get('/', async (req, res) => {
+  try {
+    const { category, district } = req.query;
+    
+    let query = supabase
+      .from('tourist_places')
+      .select('*');
+    
+    if (category) {
+      query = query.eq('category', category);
+    }
+    if (district) {
+      query = query.eq('district', district);
+    }
+    
+    const { data: places, error } = await query.order('created_at', { ascending: false });
+    
+    if (error) {
+      return res.status(500).json({ error: 'Failed to fetch destinations' });
+    }
+    
+    res.json(places || []);
+  } catch (error) {
+    console.error('Get destinations error:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
-  if (district) {
-    filteredDestinations = filteredDestinations.filter(d => d.district === district);
-  }
-
-  res.json(filteredDestinations);
 });
 
 // GET destination by ID
-router.get('/:id', (req, res) => {
-  const destination = destinations.find(d => d.id === parseInt(req.params.id));
-  if (!destination) {
-    return res.status(404).json({ error: 'Destination not found' });
+router.get('/:id', async (req, res) => {
+  try {
+    const { data: place, error } = await supabase
+      .from('tourist_places')
+      .select('*')
+      .eq('id', req.params.id)
+      .single();
+    
+    if (error || !place) {
+      return res.status(404).json({ error: 'Destination not found' });
+    }
+    
+    res.json(place);
+  } catch (error) {
+    console.error('Get destination error:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
-  res.json(destination);
 });
 
 module.exports = router;

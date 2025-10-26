@@ -28,7 +28,6 @@ app.use(limiter);
 app.use('/api/v1/destinations', require('./routes/destinations'));
 app.use('/api/v1/community', require('./routes/community'));
 app.use('/api/v1/admin', require('./routes/admin'));
-app.use('/api/v1/search', require('./routes/search'));
 app.use('/api/v1/upload', require('./routes/upload'));  
 
 // Health check

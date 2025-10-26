@@ -26,6 +26,9 @@ const AdminDashboard = () => {
     rating: 4.0
   });
 
+  const [editingPlace, setEditingPlace] = useState(null);
+  const [showEditForm, setShowEditForm] = useState(false);
+
   const categories = ['Hills', 'Heritage', 'Wildlife', 'Coast', 'Culture', 'Eco-Tourism'];
 
   useEffect(() => {
@@ -141,6 +144,89 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleEditPlace = (place) => {
+    setEditingPlace({ ...place });
+    setShowEditForm(true);
+  };
+
+  const handleUpdatePlace = async (e) => {
+    e.preventDefault();
+    try {
+      // Handle image upload if file is selected
+      let imageUrls = [...(editingPlace.images || [])];
+      if (editingPlace.newImage && typeof editingPlace.newImage === 'object' && editingPlace.newImage.file) {
+        const formData = new FormData();
+        formData.append('image', editingPlace.newImage.file);
+        
+        const uploadResponse = await fetch('http://localhost:8000/api/v1/upload', {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (uploadResponse.ok) {
+          const uploadData = await uploadResponse.json();
+          if (uploadData.success) {
+            imageUrls = [uploadData.imageUrl];
+          }
+        }
+      }
+
+      const token = localStorage.getItem('admin_token');
+      const { newImage, ...updateData } = editingPlace;
+      
+      const response = await fetch(`http://localhost:8000/api/v1/admin/places/${editingPlace.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          ...updateData,
+          images: imageUrls
+        })
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.details || 'Failed to update place');
+      }
+      
+      alert('Place updated successfully!');
+      setShowEditForm(false);
+      setEditingPlace(null);
+      fetchPlaces();
+    } catch (error) {
+      console.error('Error updating place:', error);
+      alert('Error updating place: ' + error.message);
+    }
+  };
+
+  const handleDeletePlace = async (placeId) => {
+    if (!confirm('Are you sure you want to delete this place? This action cannot be undone.')) {
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem('admin_token');
+      const response = await fetch(`http://localhost:8000/api/v1/admin/places/${placeId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to delete place');
+      }
+      
+      alert('Place deleted successfully!');
+      fetchPlaces();
+    } catch (error) {
+      console.error('Error deleting place:', error);
+      alert('Error deleting place: ' + error.message);
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem('admin_token');
     navigate('/admin/login');
@@ -246,6 +332,120 @@ const AdminDashboard = () => {
             <span>Add New Place</span>
           </button>
         </div>
+
+        {/* Edit Place Form Modal */}
+        {showEditForm && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Edit Tourist Place</h3>
+              
+              <form onSubmit={handleUpdatePlace} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Place Name</label>
+                    <input
+                      type="text"
+                      value={editingPlace.name}
+                      onChange={(e) => setEditingPlace({...editingPlace, name: e.target.value})}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <select
+                      value={editingPlace.category}
+                      onChange={(e) => setEditingPlace({...editingPlace, category: e.target.value})}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                      required
+                    >
+                      <option value="">Select Category</option>
+                      {categories.map(cat => (
+                        <option key={cat} value={cat}>{cat}</option>
+                      ))}
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">District</label>
+                    <input
+                      type="text"
+                      value={editingPlace.district}
+                      onChange={(e) => setEditingPlace({...editingPlace, district: e.target.value})}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Best Time</label>
+                    <input
+                      type="text"
+                      value={editingPlace.best_time}
+                      onChange={(e) => setEditingPlace({...editingPlace, best_time: e.target.value})}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                      placeholder="e.g., Oct-Mar"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Duration</label>
+                    <input
+                      type="text"
+                      value={editingPlace.duration}
+                      onChange={(e) => setEditingPlace({...editingPlace, duration: e.target.value})}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                      placeholder="e.g., 2-3 hours"
+                    />
+                  </div>
+                  
+
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                  <textarea
+                    value={editingPlace.description}
+                    onChange={(e) => setEditingPlace({...editingPlace, description: e.target.value})}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                    rows="3"
+                    required
+                  />
+                </div>
+                
+                <ImageUpload
+                  value={editingPlace.newImage || editingPlace.images?.[0]}
+                  onChange={(imageUrl) => setEditingPlace({...editingPlace, newImage: imageUrl})}
+                  label="Update Place Image"
+                />
+                
+                <div className="flex space-x-4 justify-end">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowEditForm(false);
+                      setEditingPlace(null);
+                    }}
+                    className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                  >
+                    Update Place
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </div>
+        )}
 
         {/* Add Place Form Modal */}
         {showAddForm && (
@@ -383,12 +583,20 @@ const AdminDashboard = () => {
                 <p className="text-gray-600 text-sm mb-2">{place.district}, {place.state}</p>
                 <p className="text-gray-700 text-sm line-clamp-2 mb-4">{place.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Rating: {place.rating}/5</span>
+                  <span className="text-sm text-gray-500">{place.best_time || 'Year-round'}</span>
                   <div className="flex space-x-2">
-                    <button className="text-blue-600 hover:text-blue-800">
+                    <button 
+                      onClick={() => handleEditPlace(place)}
+                      className="text-blue-600 hover:text-blue-800 transition-colors"
+                      title="Edit place"
+                    >
                       <Edit className="h-4 w-4" />
                     </button>
-                    <button className="text-red-600 hover:text-red-800">
+                    <button 
+                      onClick={() => handleDeletePlace(place.id)}
+                      className="text-red-600 hover:text-red-800 transition-colors"
+                      title="Delete place"
+                    >
                       <Trash2 className="h-4 w-4" />
                     </button>
                   </div>
