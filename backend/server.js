@@ -10,7 +10,13 @@ const PORT = process.env.PORT || 8000;
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  origin: [
+    'http://localhost:3000', 
+    'http://localhost:5173',
+    'https://e-ka-na-git-main-devesh-poojarys-projects.vercel.app',
+    'https://e-ka-na.vercel.app',
+    'https://ekana.vercel.app'
+  ],
   credentials: true
 }));
 
@@ -28,7 +34,8 @@ app.use(limiter);
 app.use('/api/v1/destinations', require('./routes/destinations'));
 app.use('/api/v1/community', require('./routes/community'));
 app.use('/api/v1/admin', require('./routes/admin'));
-app.use('/api/v1/upload', require('./routes/upload'));  
+app.use('/api/v1/upload', require('./routes/upload'));
+app.use('/api/v1/search', require('./routes/search'));  
 
 // Health check
 app.get('/', (req, res) => {
