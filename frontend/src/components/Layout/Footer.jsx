@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-green-700 mt-8 pt-8 text-center text-gray-300">
-          <p className="text-lg">&copy; 2025 EKaNa. All rights reserved. Made with ❤️ for Karnataka.</p>
+          <p className="text-lg">&copy; {new Date().getFullYear()} EKaNa. All rights reserved. Made with ❤️ for Karnataka.</p>
         </div>
       </div>
     </footer>

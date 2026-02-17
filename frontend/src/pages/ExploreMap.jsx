@@ -170,6 +170,7 @@ const ExploreMap = () => {
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
                   className="bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer"
+                  onClick={() => window.location.href = `/place/${place.id}`}
                 >
                   <div className="h-48 overflow-hidden">
                     <img
@@ -188,7 +189,13 @@ const ExploreMap = () => {
                     <p className="text-gray-600 mb-4 line-clamp-2">{place.description}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-500">{place.best_time || 'Year-round'}</span>
-                      <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition-colors">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.location.href = `/place/${place.id}`;
+                        }}
+                        className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition-colors"
+                      >
                         View Details
                       </button>
                     </div>

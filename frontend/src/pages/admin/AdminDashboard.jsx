@@ -29,7 +29,7 @@ const AdminDashboard = () => {
   const [editingPlace, setEditingPlace] = useState(null);
   const [showEditForm, setShowEditForm] = useState(false);
 
-  const categories = ['Hills', 'Heritage', 'Wildlife', 'Coast', 'Culture', 'Eco-Tourism'];
+  const categories = ['Hills', 'Heritage', 'Wildlife', 'Coast', 'Culture', 'Eco-Tourism', 'Temple', 'Others'];
 
   useEffect(() => {
     fetchDashboardData();
@@ -154,20 +154,26 @@ const AdminDashboard = () => {
     try {
       // Handle image upload if file is selected
       let imageUrls = [...(editingPlace.images || [])];
-      if (editingPlace.newImage && typeof editingPlace.newImage === 'object' && editingPlace.newImage.file) {
-        const formData = new FormData();
-        formData.append('image', editingPlace.newImage.file);
-        
-        const uploadResponse = await fetch('https://e-ka-na-backend.vercel.app/api/v1/upload', {
-          method: 'POST',
-          body: formData
-        });
-        
-        if (uploadResponse.ok) {
-          const uploadData = await uploadResponse.json();
-          if (uploadData.success) {
-            imageUrls = [uploadData.imageUrl];
+      if (editingPlace.newImage) {
+        if (typeof editingPlace.newImage === 'object' && editingPlace.newImage.file) {
+          // File upload
+          const formData = new FormData();
+          formData.append('image', editingPlace.newImage.file);
+          
+          const uploadResponse = await fetch('https://e-ka-na-backend.vercel.app/api/v1/upload', {
+            method: 'POST',
+            body: formData
+          });
+          
+          if (uploadResponse.ok) {
+            const uploadData = await uploadResponse.json();
+            if (uploadData.success) {
+              imageUrls = [uploadData.imageUrl];
+            }
           }
+        } else if (typeof editingPlace.newImage === 'string' && editingPlace.newImage.trim() !== '') {
+          // URL update
+          imageUrls = [editingPlace.newImage.trim()];
         }
       }
 

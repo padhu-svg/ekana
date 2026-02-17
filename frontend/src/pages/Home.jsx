@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Search, Mountain, TreePine, Waves, Camera, Users, Leaf } from 'lucide-react';
+import { Search, Mountain, TreePine, Waves, Camera, Users, Leaf, Landmark, Castle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { destinationsAPI } from '../services/api';
 import SearchBar from '../components/SearchBar';
@@ -19,6 +19,7 @@ const Home = () => {
     { name: 'Coast', icon: Waves, color: 'bg-green-500' },
     { name: 'Culture', icon: Users, color: 'bg-green-600' },
     { name: 'Eco-Tourism', icon: Leaf, color: 'bg-green-700' },
+    { name: 'Temples', icon: Castle, color: 'bg-green-900' }
   ];
 
   useEffect(() => {
@@ -106,7 +107,7 @@ const Home = () => {
             <p className="text-2xl text-gray-700 font-medium">Discover Karnataka's diverse attractions</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
             {categories.map((category, index) => (
               <motion.div
                 key={category.name}

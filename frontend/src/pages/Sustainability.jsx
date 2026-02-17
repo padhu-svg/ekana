@@ -56,7 +56,7 @@ const Sustainability = () => {
     {
       title: 'Wildlife Conservation',
       description: 'Supporting conservation efforts in Karnataka\'s national parks',
-      image: 'https://images.unsplash.com/photo-1549366021-9f761d040a94?w=500',
+      image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=500',
       impact: '5 conservation projects'
     }
   ];
