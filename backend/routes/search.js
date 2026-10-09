@@ -10,10 +10,13 @@ router.get('/', async (req, res) => {
       return res.status(400).json({ error: 'Search query is required' });
     }
     
+    // Sanitize search query for PostgREST
+    const sanitizedQ = q.replace(/[%_,.\(\)]/g, '\\$&');
+
     const { data: places, error } = await supabase
       .from('tourist_places')
       .select('*')
-      .or(`name.ilike.%${q}%,description.ilike.%${q}%,district.ilike.%${q}%`)
+      .or(`name.ilike.%${sanitizedQ}%,description.ilike.%${sanitizedQ}%,district.ilike.%${sanitizedQ}%`)
       .order('created_at', { ascending: false });
     
     if (error) {

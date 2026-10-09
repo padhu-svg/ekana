@@ -13,16 +13,17 @@ const upload = multer({
     fileSize: 10 * 1024 * 1024, // 10MB limit
   },
   fileFilter: (req, file, cb) => {
-    if (file.mimetype.startsWith('image/')) {
+    const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    if (allowedMimeTypes.includes(file.mimetype)) {
       cb(null, true);
     } else {
-      cb(new Error('Only image files are allowed'), false);
+      cb(new Error('Only JPEG, PNG, and WebP images are allowed'), false);
     }
   }
 });
 
 // Upload image to Supabase Storage
-router.post('/', upload.single('image'), async (req, res) => {
+router.post('/', authenticateAdmin, upload.single('image'), async (req, res) => {
   try {
     console.log('Upload request received');
     console.log('File:', req.file ? 'Present' : 'Missing');

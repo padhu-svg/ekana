@@ -3,11 +3,15 @@ import PublicLayout from './components/layouts/PublicLayout';
 import AdminLayout from './components/layouts/AdminLayout';
 import Home from './pages/Home';
 import Discover from './pages/Discover';
-import Sustainability from './pages/Sustainability';
 import ExploreMap from './pages/ExploreMap';
+import PlaceDetails from './pages/PlaceDetails';
+import PlanTrip from './pages/PlanTrip';
+import Community from './pages/Community';
+import Blog from './pages/Blog';
+import Partner from './pages/Partner';
+import Sustainability from './pages/Sustainability';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
-import PlaceDetails from './pages/PlaceDetails';
 
 function AppContent() {
   const location = useLocation();
@@ -30,8 +34,12 @@ function AppContent() {
         <Route path="/" element={<Home />} />
         <Route path="/discover" element={<Discover />} />
         <Route path="/map" element={<ExploreMap />} />
-        <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/place/:id" element={<PlaceDetails />} />
+        <Route path="/plan" element={<PlanTrip />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/partner" element={<Partner />} />
+        <Route path="/sustainability" element={<Sustainability />} />
       </Routes>
     </PublicLayout>
   );

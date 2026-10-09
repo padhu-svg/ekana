@@ -1,231 +1,70 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Leaf, Users, Globe, Heart, Target, Award } from 'lucide-react';
+import { Leaf, Recycle, HeartHandshake, TreePine } from 'lucide-react';
 
 const Sustainability = () => {
-  const sdgGoals = [
-    {
-      number: 8,
-      title: 'Decent Work and Economic Growth',
-      description: 'Supporting local entrepreneurs and creating sustainable tourism jobs',
-      icon: Users,
-      color: 'bg-red-500'
-    },
-    {
-      number: 11,
-      title: 'Sustainable Cities and Communities',
-      description: 'Promoting responsible tourism that preserves local communities',
-      icon: Globe,
-      color: 'bg-orange-500'
-    },
-    {
-      number: 12,
-      title: 'Responsible Consumption',
-      description: 'Encouraging eco-friendly travel practices and local products',
-      icon: Leaf,
-      color: 'bg-yellow-500'
-    },
-    {
-      number: 13,
-      title: 'Climate Action',
-      description: 'Reducing carbon footprint through sustainable travel options',
-      icon: Target,
-      color: 'bg-green-500'
-    },
-    {
-      number: 15,
-      title: 'Life on Land',
-      description: 'Protecting Karnataka\'s biodiversity and natural habitats',
-      icon: Heart,
-      color: 'bg-blue-500'
-    }
-  ];
-
   const initiatives = [
-    {
-      title: 'Eco-Certified Accommodations',
-      description: 'Partner with homestays and hotels that follow sustainable practices',
-      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500',
-      impact: '50+ certified partners'
-    },
-    {
-      title: 'Local Community Support',
-      description: 'Direct booking platform ensuring 80% revenue goes to local entrepreneurs',
-      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500',
-      impact: '200+ families supported'
-    },
-    {
-      title: 'Wildlife Conservation',
-      description: 'Supporting conservation efforts in Karnataka\'s national parks',
-      image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=500',
-      impact: '5 conservation projects'
-    }
-  ];
-
-  const metrics = [
-    { label: 'CO2 Offset', value: '500 tons', icon: Leaf },
-    { label: 'Local Jobs Created', value: '1,200+', icon: Users },
-    { label: 'Communities Supported', value: '50+', icon: Globe },
-    { label: 'Conservation Projects', value: '15', icon: Heart }
+    { icon: Leaf, title: 'Eco-Tourism Promotion', desc: 'Supporting homestays and resorts that run on renewable energy, practice rainwater harvesting, and minimize plastic use.' },
+    { icon: HeartHandshake, title: 'Community Empowerment', desc: 'Ensuring tourism revenue goes directly to local artisans, guides, and families rather than large commercial chains.' },
+    { icon: TreePine, title: 'Biodiversity Conservation', desc: 'Regulating footfall in sensitive Western Ghats zones and promoting awareness about local flora and fauna.' },
+    { icon: Recycle, title: 'Zero Waste Trails', desc: 'Implementing strict waste management protocols across popular trekking routes and heritage sites.' }
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 hero-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl font-bold text-white mb-6">
-              Sustainable Tourism for Karnataka
-            </h1>
-            <p className="text-xl text-yellow-200 max-w-3xl mx-auto">
-              We're committed to preserving Karnataka's natural beauty and supporting local communities 
-              through responsible tourism practices
+    <div className="min-h-screen bg-[#F4F1DE] pt-8 pb-20 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Hero */}
+        <div className="bg-[#81B29A] rounded-3xl p-12 mb-16 text-center shadow-xl relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1542314831-c6a4d14abac2?w=1200')] bg-cover bg-center"></div>
+          <div className="relative z-10">
+            <h1 className="text-4xl md:text-5xl font-bold text-white font-heading mb-6">Experience Karnataka Naturally</h1>
+            <p className="text-xl text-[#F4F1DE] max-w-3xl mx-auto font-medium">
+              EKaNa is committed to the UN Sustainable Development Goals. We believe travel should preserve our heritage, protect our ecology, and empower our people.
             </p>
-          </motion.div>
+          </div>
         </div>
-      </section>
 
-      {/* SDG Goals */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Commitment to UN SDGs</h2>
-            <p className="text-xl text-gray-600">Aligning our mission with global sustainability goals</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sdgGoals.map((goal, index) => (
-              <motion.div
-                key={goal.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+        {/* UN SDGs */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-[#2A363B] font-heading mb-8 text-center">Our Commitment to the Global Goals</h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            {['Goal 8: Decent Work', 'Goal 11: Sustainable Cities', 'Goal 12: Responsible Consumption', 'Goal 13: Climate Action', 'Goal 15: Life on Land'].map((goal, idx) => (
+              <motion.div 
+                key={idx}
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center flex flex-col items-center justify-center h-32"
               >
-                <div className="flex items-center mb-4">
-                  <div className={`${goal.color} w-12 h-12 rounded-full flex items-center justify-center mr-4`}>
-                    <goal.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">SDG {goal.number}</div>
-                    <h3 className="font-bold text-gray-900">{goal.title}</h3>
-                  </div>
-                </div>
-                <p className="text-gray-600">{goal.description}</p>
+                <span className="font-bold text-[#3D5A80] text-sm uppercase tracking-wider">{goal}</span>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Impact Metrics */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Impact</h2>
-            <p className="text-xl text-gray-600">Measurable results of our sustainability efforts</p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {metrics.map((metric, index) => (
-              <motion.div
-                key={metric.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+        {/* Initiatives */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {initiatives.map((init, idx) => {
+            const Icon = init.icon;
+            return (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="bg-white p-8 rounded-3xl shadow-md border border-gray-100 flex items-start"
               >
-                <div className="bg-green-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <metric.icon className="h-8 w-8 text-white" />
+                <div className="bg-[#F4F1DE] p-4 rounded-full mr-6 shrink-0">
+                  <Icon className="w-8 h-8 text-[#E07A5F]" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{metric.value}</div>
-                <div className="text-gray-600">{metric.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Initiatives */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Initiatives</h2>
-            <p className="text-xl text-gray-600">Programs making a real difference in Karnataka</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {initiatives.map((initiative, index) => (
-              <motion.div
-                key={initiative.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
-              >
-                <div className="h-48">
-                  <img
-                    src={initiative.image}
-                    alt={initiative.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{initiative.title}</h3>
-                  <p className="text-gray-600 mb-4">{initiative.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-green-700 font-semibold">{initiative.impact}</span>
-                    <Award className="h-5 w-5 text-orange-600" />
-                  </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#2A363B] font-heading mb-3">{init.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{init.desc}</p>
                 </div>
               </motion.div>
-            ))}
-          </div>
+            )
+          })}
         </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="py-20 hero-gradient">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">Join Our Sustainability Mission</h2>
-            <p className="text-xl text-yellow-200 mb-8">
-              Be part of the change. Travel responsibly and support local communities.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-secondary text-lg px-8 py-4">
-                Become a Partner
-              </button>
-              <button className="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-lg font-medium transition-colors">
-                Learn More
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };

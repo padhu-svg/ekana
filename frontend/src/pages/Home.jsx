@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Search, Mountain, TreePine, Waves, Camera, Users, Leaf, Landmark, Castle } from 'lucide-react';
+import { Search, Mountain, TreePine, Waves, Camera, Users, Leaf, Landmark, Castle, Utensils } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { destinationsAPI } from '../services/api';
 import SearchBar from '../components/SearchBar';
 import SearchResults from '../components/SearchResults';
@@ -11,15 +12,16 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const navigate = useNavigate();
 
   const categories = [
-    { name: 'Heritage', icon: Camera, color: 'bg-green-600' },
-    { name: 'Hills', icon: Mountain, color: 'bg-green-700' },
-    { name: 'Wildlife', icon: TreePine, color: 'bg-green-800' },
-    { name: 'Coast', icon: Waves, color: 'bg-green-500' },
-    { name: 'Culture', icon: Users, color: 'bg-green-600' },
-    { name: 'Eco-Tourism', icon: Leaf, color: 'bg-green-700' },
-    { name: 'Temples', icon: Castle, color: 'bg-green-900' }
+    { name: 'Heritage', icon: Camera, color: 'bg-[#D0694E]' }, // Terracotta
+    { name: 'Hills', icon: Mountain, color: 'bg-[#3D5A80]' }, // Blue
+    { name: 'Wildlife', icon: TreePine, color: 'bg-[#63927A]' }, // Green
+    { name: 'Coast', icon: Waves, color: 'bg-[#3D5A80]' }, // Blue
+    { name: 'Culture', icon: Users, color: 'bg-[#E07A5F]' }, // Terracotta
+    { name: 'Eco-Tourism', icon: Leaf, color: 'bg-[#81B29A]' }, // Green
+    { name: 'Cuisine', icon: Utensils, color: 'bg-[#E07A5F]' } // Terracotta
   ];
 
   useEffect(() => {
@@ -51,36 +53,44 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-sans">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop)'}}></div>
-        <div className="absolute inset-0 bg-opacity-60"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center text-white px-4">
+          <motion.h3 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl md:text-3xl font-heading mb-4 text-[#F4F1DE]"
+          >
+            ಗಂದದ ಗುಡಿ – ವಿಶ್ವ ಪ್ರವಾಸಿಗರ ಗಮ್ಯಸ್ಥಾನ
+          </motion.h3>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl md:text-8xl font-bold mb-8 leading-tight"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-6xl md:text-8xl font-bold mb-8 leading-tight font-heading"
           >
             Experience Karnataka
             <br />
-            <span className="text-green-200 text-shadow-lg">Naturally</span>
+            <span className="text-[#E07A5F] drop-shadow-lg">Naturally</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl md:text-3xl mb-12 max-w-4xl mx-auto font-medium text-green-50"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto font-medium text-gray-200"
           >
-            Discover authentic local experiences across Karnataka's diverse landscapes
+            Discover authentic local experiences across Karnataka's diverse landscapes, vibrant culture, and rich heritage.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="max-w-3xl mx-auto relative"
           >
             <SearchBar onResults={handleSearchResults} />
@@ -95,7 +105,7 @@ const Home = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-24 bg-gradient-to-b from-green-50 to-white">
+      <section className="py-24 bg-[#F4F1DE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -103,11 +113,11 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Explore by Category</h2>
-            <p className="text-2xl text-gray-700 font-medium">Discover Karnataka's diverse attractions</p>
+            <h2 className="text-5xl font-bold text-[#2A363B] mb-6 font-heading">Explore by Category</h2>
+            <p className="text-2xl text-gray-700 font-medium">Immerse yourself in themes that define Karnataka</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
             {categories.map((category, index) => (
               <motion.div
                 key={category.name}
@@ -116,11 +126,12 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center cursor-pointer group"
+                onClick={() => navigate(`/discover?category=${encodeURIComponent(category.name)}`)}
               >
-                <div className={`${category.color} w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:shadow-2xl transition-all duration-300`}>
-                  <category.icon className="h-12 w-12 text-white" />
+                <div className={`${category.color} w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:shadow-2xl transition-all duration-300 border-4 border-white/50`}>
+                  <category.icon className="h-10 w-10 text-white" />
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg">{category.name}</h3>
+                <h3 className="font-bold text-[#2A363B] text-lg">{category.name}</h3>
               </motion.div>
             ))}
           </div>
@@ -136,15 +147,15 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Featured Destinations</h2>
-            <p className="text-2xl text-gray-700 font-medium">Must-visit places in Karnataka</p>
+            <h2 className="text-5xl font-bold text-[#2A363B] mb-6 font-heading">Featured Destinations</h2>
+            <p className="text-2xl text-gray-600 font-medium">Curated local experiences waiting for you</p>
           </motion.div>
 
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {[...Array(3)].map((_, i) => (
-                <div key={i} className="bg-white rounded-lg shadow-lg animate-pulse">
-                  <div className="h-72 bg-gray-300 rounded-t-lg"></div>
+                <div key={i} className="bg-gray-100 rounded-2xl shadow-lg animate-pulse border border-gray-200">
+                  <div className="h-72 bg-gray-300 rounded-t-2xl"></div>
                   <div className="p-8">
                     <div className="h-6 bg-gray-300 rounded mb-4"></div>
                     <div className="h-4 bg-gray-300 rounded"></div>
@@ -162,24 +173,23 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   whileHover={{ y: -15, scale: 1.02 }}
                   className="card overflow-hidden cursor-pointer group"
-                  onClick={() => window.location.href = `/place/${destination.id}`}
+                  onClick={() => navigate(`/place/${destination.id}`)}
                 >
                   <div className="relative h-72 overflow-hidden">
                     <img
                       src={destination.images?.[0] || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500'}
                       alt={destination.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                     />
                     <div className="absolute top-6 left-6">
-                      <span className="bg-green-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      <span className="bg-[#81B29A] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                         {destination.category}
                       </span>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <div className="p-8">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4">{destination.name}</h3>
-                    <p className="text-gray-700 text-lg leading-relaxed">{destination.description}</p>
+                  <div className="p-8 bg-white group-hover:bg-[#F4F1DE] transition-colors duration-300">
+                    <h3 className="text-3xl font-bold text-[#2A363B] mb-4 font-heading">{destination.name}</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed line-clamp-3">{destination.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -189,18 +199,22 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 hero-gradient">
-        <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-to-br from-[#2A363B] to-[#3D5A80] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl font-bold text-white mb-8 leading-tight">Ready to Plan Your Karnataka Adventure?</h2>
-            <p className="text-2xl text-green-100 mb-12 font-medium leading-relaxed">
-              Let our AI-powered trip planner create the perfect itinerary for you
+            <h2 className="text-5xl font-bold text-white mb-8 leading-tight font-heading">Ready to Plan Your Karnataka Adventure?</h2>
+            <p className="text-2xl text-[#F4F1DE] mb-12 font-medium leading-relaxed opacity-90">
+              Let our smart trip planner create a curated, eco-friendly itinerary for you.
             </p>
-            <button className="btn-secondary text-xl px-12 py-4 text-white bg-green-600 hover:bg-green-500">
+            <button 
+              className="btn-primary text-xl px-12 py-4 shadow-xl"
+              onClick={() => navigate('/plan')}
+            >
               Start Planning Now
             </button>
           </motion.div>

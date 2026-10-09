@@ -187,48 +187,6 @@ router.delete('/places/:id', authenticateAdmin, async (req, res) => {
   }
 });
 
-// Create admin (for initial setup)
-router.post('/create-admin', async (req, res) => {
-  try {
-    const { username, email, password } = req.body;
 
-    if (!username || !email || !password) {
-      return res.status(400).json({ error: 'All fields are required' });
-    }
-
-    // Check if admin already exists
-    const { data: existingAdmin } = await supabase
-      .from('admins')
-      .select('id')
-      .eq('username', username)
-      .single();
-
-    if (existingAdmin) {
-      return res.status(400).json({ error: 'Admin already exists' });
-    }
-
-    const hashedPassword = await hashPassword(password);
-    
-    const { data: admin, error } = await supabase
-      .from('admins')
-      .insert([{
-        username,
-        email,
-        hashed_password: hashedPassword,
-        created_at: new Date().toISOString()
-      }])
-      .select()
-      .single();
-
-    if (error) {
-      return res.status(500).json({ error: 'Failed to create admin' });
-    }
-
-    res.status(201).json({ message: 'Admin created successfully' });
-  } catch (error) {
-    console.error('Create admin error:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
 
 module.exports = router;

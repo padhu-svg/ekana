@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://e-ka-na-backend.vercel.app/api/v1';
+// Point to local backend instead of Vercel to ensure search and features work
+const API_BASE_URL = 'http://localhost:8000/api/v1';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
