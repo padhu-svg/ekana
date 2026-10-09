@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { MapPin, Clock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const SearchResults = ({ results, onClose }) => {
+  const navigate = useNavigate();
+
   if (results.length === 0) return null;
 
   return (
@@ -29,7 +32,10 @@ const SearchResults = ({ results, onClose }) => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.05 }}
-            onClick={() => window.location.href = `/place/${place.id}`}
+            onClick={() => {
+              navigate(`/place/${place.id}`);
+              onClose();
+            }}
             className="p-4 hover:bg-gray-50 cursor-pointer transition-colors"
           >
             <div className="flex items-center space-x-4">
