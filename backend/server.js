@@ -10,13 +10,7 @@ const PORT = process.env.PORT || 8000;
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: [
-    'http://localhost:3000', 
-    'http://localhost:5173',
-    'https://e-ka-na-git-main-devesh-poojarys-projects.vercel.app',
-    'https://e-ka-na.vercel.app',
-    'https://ekana.vercel.app'
-  ],
+  origin: true,
   credentials: true
 }));
 
@@ -46,6 +40,10 @@ app.get('/health', (req, res) => {
   res.json({ status: 'healthy' });
 });
 
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'healthy' });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -57,7 +55,11 @@ app.use('*', (req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 EKaNa API Server running on port ${PORT}`);
-  console.log(`📍 Health check: http://localhost:${PORT}/health`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 EKaNa API Server running on port ${PORT}`);
+    console.log(`📍 Health check: http://localhost:${PORT}/health`);
+  });
+}
+
+module.exports = app;

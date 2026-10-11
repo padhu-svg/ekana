@@ -19,6 +19,13 @@ router.get('/', async (req, res) => {
   try {
     const { category, district } = req.query;
     
+    if (!supabase) {
+      let filteredMock = MOCK_PLACES;
+      if (category) filteredMock = filteredMock.filter(p => p.category && p.category.toLowerCase() === category.toLowerCase());
+      if (district) filteredMock = filteredMock.filter(p => p.district && p.district.toLowerCase() === district.toLowerCase());
+      return res.json(filteredMock);
+    }
+
     let query = supabase
       .from('tourist_places')
       .select('*');
@@ -31,16 +38,16 @@ router.get('/', async (req, res) => {
     if (error) {
       console.warn('Supabase fetch failed, returning mock data. Error:', error.message);
       let filteredMock = MOCK_PLACES;
-      if (category) filteredMock = filteredMock.filter(p => p.category.toLowerCase() === category.toLowerCase());
-      if (district) filteredMock = filteredMock.filter(p => p.district.toLowerCase() === district.toLowerCase());
+      if (category) filteredMock = filteredMock.filter(p => p.category && p.category.toLowerCase() === category.toLowerCase());
+      if (district) filteredMock = filteredMock.filter(p => p.district && p.district.toLowerCase() === district.toLowerCase());
       return res.json(filteredMock);
     }
     
     // Also return mock data if the DB is empty, for prototype demonstration
     if (!places || places.length === 0) {
       let filteredMock = MOCK_PLACES;
-      if (category) filteredMock = filteredMock.filter(p => p.category.toLowerCase() === category.toLowerCase());
-      if (district) filteredMock = filteredMock.filter(p => p.district.toLowerCase() === district.toLowerCase());
+      if (category) filteredMock = filteredMock.filter(p => p.category && p.category.toLowerCase() === category.toLowerCase());
+      if (district) filteredMock = filteredMock.filter(p => p.district && p.district.toLowerCase() === district.toLowerCase());
       return res.json(filteredMock);
     }
 
@@ -48,8 +55,8 @@ router.get('/', async (req, res) => {
   } catch (error) {
     console.error('Get destinations error:', error);
     let filteredMock = MOCK_PLACES;
-    if (req.query.category) filteredMock = filteredMock.filter(p => p.category.toLowerCase() === req.query.category.toLowerCase());
-    if (req.query.district) filteredMock = filteredMock.filter(p => p.district.toLowerCase() === req.query.district.toLowerCase());
+    if (req.query.category) filteredMock = filteredMock.filter(p => p.category && p.category.toLowerCase() === req.query.category.toLowerCase());
+    if (req.query.district) filteredMock = filteredMock.filter(p => p.district && p.district.toLowerCase() === req.query.district.toLowerCase());
     res.json(filteredMock); // Fallback on crash
   }
 });
@@ -57,6 +64,12 @@ router.get('/', async (req, res) => {
 // GET destination by ID
 router.get('/:id', async (req, res) => {
   try {
+    if (!supabase) {
+      const mockPlace = MOCK_PLACES.find(p => p.id.toString() === req.params.id);
+      if (mockPlace) return res.json(mockPlace);
+      return res.status(404).json({ error: 'Destination not found' });
+    }
+
     const { data: place, error } = await supabase
       .from('tourist_places')
       .select('*')

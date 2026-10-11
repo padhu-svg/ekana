@@ -1,0 +1,808 @@
+[
+  {
+    "name": "Badami Cave Temples",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Bagalkote",
+    "description": "Badami, historically known as Vatapi, was the capital of the Early Chalukyas from the 6th to the 8th century CE. Its four principal rock-cut caves contain Hindu and Jain sculptures and are important examples of early Deccan rock-cut architecture.\n\nThe caves are carved into red sandstone cliffs overlooking Agastya Lake. The surrounding Badami landscape also contains the Bhutanatha temples and fortifications, making the town a major component of Karnataka's Chalukyan heritage circuit.",
+    "get_in": "Badami railway station is in the town and provides rail connectivity. Hubballi Airport is the nearest major commercial airport, approximately 105 km away. Badami is connected by road with Bagalkote, Gadag, Hubballi and other Karnataka cities.",
+    "see": "The four rock-cut caves, Nataraja sculpture in Cave 1, Vishnu sculptures in Caves 2 and 3, Jain sculptures in Cave 4, Agastya Lake, Bhutanatha temples and Badami Fort.",
+    "do": "Explore the caves, walk around Agastya Lake, visit the fort area, photograph the sandstone landscape and combine the visit with Aihole and Pattadakal.",
+    "eat": "Jolada rotti, ennegayi, North Karnataka vegetable curries, saaru, rice meals and regional sweets.",
+    "sleep": "Hotels, guesthouses, KSTDC accommodation and locally operated homestays are available in Badami.",
+    "latitude": 15.9487,
+    "longitude": 75.8118,
+    "best_time": "Oct-Mar",
+    "duration": "Half day",
+    "tags": [
+      "Chalukya",
+      "Rock-cut temples",
+      "Heritage"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "1",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Ballari Fort",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Ballari",
+    "description": "Ballari Fort occupies a prominent granite hill in Ballari city. The fort consists of upper and lower defensive sections that developed under different ruling periods, with the naturally steep granite terrain forming an important part of its defensive design.\n\nThe fort overlooks Ballari and the surrounding semi-arid Deccan landscape. The city and district have a long history connected with the political and cultural developments of the Deccan and the wider Vijayanagara region.",
+    "get_in": "Ballari Junction is the principal railway station. Jindal Vijayanagar Airport at Toranagallu is the nearest operational regional airport of significance. Ballari has road connections with Bengaluru, Hosapete, Chitradurga, Koppal and Andhra Pradesh.",
+    "see": "Upper Fort, Lower Fort, granite hill, defensive walls, gateways and panoramic views of Ballari.",
+    "do": "Climb the fort, explore its defensive structures, photograph the granite landscape and visit other heritage sites around Ballari.",
+    "eat": "Jolada rotti, ennegayi, ragi-based dishes, North Karnataka curries and regional sweets.",
+    "sleep": "Hotels, lodges, guesthouses and locally operated accommodation are available in Ballari.",
+    "latitude": 15.1446,
+    "longitude": 76.9214,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 hours",
+    "tags": [
+      "Fort",
+      "Granite",
+      "Deccan"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800"
+    ],
+    "id": "2",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Belagavi Fort",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Belagavi",
+    "description": "Belagavi Fort is a major historic fortification in northern Karnataka with a history spanning several ruling periods. Its strategic position near the Karnataka-Maharashtra-Goa region contributed to its military importance and historical development.\n\nThe fort contains important religious and architectural remains, including the Kamal Basadi Jain temple. Belagavi's location at a cultural crossroads has also contributed to a distinctive regional culture combining Kannada and Deccan influences.",
+    "get_in": "Belagavi Airport is approximately 15 km away. Belagavi railway station is a major station on the Mumbai-Bengaluru railway corridor. The city has road connections to Bengaluru, Pune, Mumbai, Goa and other Karnataka cities.",
+    "see": "Fort walls, gateways, Kamal Basadi Jain temple, temples and historic defensive structures.",
+    "do": "Explore the fort, study its architecture, photograph the historic structures and visit other heritage attractions in Belagavi.",
+    "eat": "Jolada rotti, zunka, ennegayi, North Karnataka meals and Belagavi kunda.",
+    "sleep": "Hotels, guesthouses, serviced accommodation and locally operated stays are available in Belagavi.",
+    "latitude": 15.8497,
+    "longitude": 74.4977,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 hours",
+    "tags": [
+      "Fort",
+      "Jain heritage",
+      "Deccan"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=800"
+    ],
+    "id": "3",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Ghati Subramanya Temple",
+    "category": "Temples",
+    "state": "Karnataka",
+    "district": "Bengaluru Rural",
+    "description": "Ghati Subramanya is a major Hindu pilgrimage centre in Doddaballapura taluk of Bengaluru Rural district. The principal shrine is dedicated to Subramanya, with a distinctive tradition in which the deity is associated with both Subramanya and Narasimha.\n\nThe temple is surrounded by a rural landscape north of Bengaluru and is particularly known for its religious significance among devotees of Subramanya. It remains a living place of worship, so visitors should follow temple regulations regarding dress, photography and access.",
+    "get_in": "Kempegowda International Airport is approximately 45 km away. Doddaballapura railway station is a practical rail gateway. Ghati Subramanya is connected by road with Doddaballapura, Bengaluru and neighbouring towns.",
+    "see": "Main temple, Subramanya shrine, Narasimha representation and surrounding rural landscape.",
+    "do": "Temple visit, observe religious rituals where permitted, explore the surrounding countryside and experience local pilgrimage traditions.",
+    "eat": "South Indian vegetarian meals, idli, dosa, vada, ragi dishes and Karnataka snacks.",
+    "sleep": "Guesthouses and hotels are available around Doddaballapura and Bengaluru, with limited pilgrimage-oriented accommodation near the temple.",
+    "latitude": 13.4437,
+    "longitude": 77.443,
+    "best_time": "Oct-Mar",
+    "duration": "2-3 hours",
+    "tags": [
+      "Subramanya",
+      "Pilgrimage",
+      "Temple"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "4",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Vidhana Soudha",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Bengaluru Urban",
+    "description": "Vidhana Soudha is the seat of the Karnataka Legislature and one of Bengaluru's best-known public buildings. It was constructed during the 1950s under Chief Minister Kengal Hanumanthaiah and inaugurated in 1956.\n\nThe monumental granite building incorporates Neo-Dravidian architectural influences and traditional Indian motifs. It stands in the central administrative district opposite the Karnataka High Court and is an important symbol of Karnataka's post-Independence public architecture.",
+    "get_in": "Kempegowda International Airport is approximately 35 km away. KSR Bengaluru City Junction is the principal railway station. Vidhana Soudha is well connected by Bengaluru roads and public transport, including nearby Namma Metro stations.",
+    "see": "Granite façade, monumental staircase, domes, columns, legislative precinct and nearby Attara Kacheri.",
+    "do": "View and photograph the building from permitted public areas and visit nearby Cubbon Park and central Bengaluru heritage sites.",
+    "eat": "Masala dosa, idli-vada, rava idli, filter coffee and Karnataka vegetarian meals.",
+    "sleep": "Hotels, serviced apartments, guesthouses and premium accommodation are widely available in central Bengaluru.",
+    "latitude": 12.9796,
+    "longitude": 77.5905,
+    "best_time": "Oct-Feb",
+    "duration": "1-2 hours",
+    "tags": [
+      "Bengaluru",
+      "Architecture",
+      "Legislature"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=800"
+    ],
+    "id": "5",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Bidar Fort",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Bidar",
+    "description": "Bidar Fort is a major medieval fortified complex associated particularly with the Bahmani Sultanate. Bidar became the Bahmani capital in the 15th century under Ahmad Shah Wali, and the fort was substantially developed during this period.\n\nThe complex contains extensive defensive walls, gateways, palaces, mosques and other structures displaying Deccan architectural traditions. Bidar is also historically associated with Bidriware, the metal-inlay craft that developed in the region.",
+    "get_in": "Bidar railway station provides rail access to the city. Bidar Airport has limited scheduled connectivity. Road connections link Bidar with Hyderabad, Kalaburagi, Bengaluru and other northern Karnataka destinations.",
+    "see": "Fort walls, gateways, Rangin Mahal, Solah Khamba Mosque, palaces, audience halls and defensive structures.",
+    "do": "Explore the fort, study Deccan architecture, photograph historic structures and visit Bidriware craft centres.",
+    "eat": "Jolada rotti, bhakri-style breads, vegetable curries, rice meals and Deccan-influenced dishes.",
+    "sleep": "Hotels, guesthouses and budget accommodation are available in Bidar.",
+    "latitude": 17.9133,
+    "longitude": 77.5301,
+    "best_time": "Oct-Feb",
+    "duration": "3-4 hours",
+    "tags": [
+      "Bahmani",
+      "Fort",
+      "Deccan"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=800"
+    ],
+    "id": "6",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "BRT Tiger Reserve",
+    "category": "Wildlife",
+    "state": "Karnataka",
+    "district": "Chamarajanagara",
+    "description": "Biligiri Rangaswamy Temple Tiger Reserve protects a biologically important forest landscape where the Eastern and Western Ghats meet. The reserve supports species including tigers, Asian elephants, leopards, gaur and numerous birds.\n\nThe landscape also has a long cultural association with the Soliga community. The Biligirirangana Hills contain forests, grasslands and hill terrain, making the reserve important for biodiversity conservation and ecological connectivity.",
+    "get_in": "Mysuru Airport is the nearest commercial airport of practical significance. Chamarajanagar railway station is a principal railhead for the region. Road access to the reserve is available from Chamarajanagar and Yelandur.",
+    "see": "Biligirirangana Hills, forest landscapes, grasslands, wildlife habitats and Sri Biligiri Ranganatha Swamy Temple.",
+    "do": "Wildlife safari where permitted, birdwatching, guided nature activities, trekking on authorised routes and temple visits.",
+    "eat": "Ragi-based dishes, rice meals, South Indian vegetarian food and Karnataka-style local meals.",
+    "sleep": "Forest tourism facilities, Jungle Lodges & Resorts accommodation and locally operated homestays are available subject to availability and regulations.",
+    "latitude": 11.9945,
+    "longitude": 77.1547,
+    "best_time": "Nov-Apr",
+    "duration": "1-2 days",
+    "tags": [
+      "Tiger Reserve",
+      "Biodiversity",
+      "Forest"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800"
+    ],
+    "id": "7",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Nandi Hills",
+    "category": "Hills",
+    "state": "Karnataka",
+    "district": "Chikkaballapura",
+    "description": "Nandi Hills is a prominent hill destination rising to approximately 1,450 metres above sea level in Chikkaballapur district. The hill contains temples, fortifications and historical structures associated with the region's history, including the period of Tipu Sultan and the Mysore state.\n\nIts elevated terrain provides a cooler climate than the surrounding plains and supports rocky slopes and vegetation. Its proximity to Bengaluru makes it a heavily visited destination, making waste management and protection of the hill environment important.",
+    "get_in": "Kempegowda International Airport is approximately 35 km away. Chikkaballapur railway station is the nearest rail station. Nandi Hills is connected by road from Bengaluru and Chikkaballapur.",
+    "see": "Nandi Temple, hilltop fortifications, Tipu's Drop viewpoint, panoramic viewpoints and historic structures.",
+    "do": "Hiking, sunrise viewing, cycling on permitted roads, photography and nature observation.",
+    "eat": "Idli, dosa, vada, South Indian meals, Karnataka snacks and filter coffee.",
+    "sleep": "Hotels, KSTDC accommodation and homestays are available around Nandi Hills and Chikkaballapur.",
+    "latitude": 13.3702,
+    "longitude": 77.6835,
+    "best_time": "Sep-Feb",
+    "duration": "Half day",
+    "tags": [
+      "Hill station",
+      "Sunrise",
+      "Trekking"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800"
+    ],
+    "id": "8",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Mullayanagiri",
+    "category": "Hills",
+    "state": "Karnataka",
+    "district": "Chikkamagaluru",
+    "description": "Mullayanagiri is the highest peak in Karnataka at approximately 1,930 metres above sea level. It lies in the Baba Budangiri range of the Western Ghats and is characterised by high-elevation grasslands, rocky slopes and surrounding forest and coffee-growing landscapes.\n\nA small shrine dedicated to Sri Mullappa Swamy is located near the summit. Mullayanagiri is a major trekking and scenic destination within Chikkamagaluru's coffee country, and its high-altitude environment is sensitive to littering and damage to vegetation.",
+    "get_in": "Mangaluru International Airport is a major airport gateway for the region. Chikkamagaluru railway station and Kadur railway station provide rail access. Mullayanagiri is reached by road from Chikkamagaluru through hill roads.",
+    "see": "Summit shrine, Western Ghats viewpoints, surrounding grasslands, coffee country and mountain landscapes.",
+    "do": "Trekking, hiking, landscape photography, sunrise viewing and nature observation on permitted routes.",
+    "eat": "Chikkamagaluru coffee, akki rotti, kadubu, pathrode and Karnataka vegetarian meals.",
+    "sleep": "Coffee-estate homestays, plantation stays, eco-oriented resorts and hotels are available around Chikkamagaluru.",
+    "latitude": 13.3907,
+    "longitude": 75.718,
+    "best_time": "Oct-May",
+    "duration": "Half day to 1 day",
+    "tags": [
+      "Western Ghats",
+      "Highest peak",
+      "Trekking"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800"
+    ],
+    "id": "9",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Chitradurga Fort",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Chitradurga",
+    "description": "Chitradurga Fort is one of Karnataka's major historic fortifications. Built across a chain of granite hills, the fort developed through several ruling periods, including the Nayakas of Chitradurga and later the Mysore state. Its multiple defensive walls, gateways, bastions and water structures were integrated into the natural rocky terrain.\n\nThe fort is strongly associated with the history of the Nayaka rulers and the local memory of Onake Obavva. The surrounding granite landscape is an important geological and visual feature of the destination.",
+    "get_in": "Chitradurga railway station is on the Bengaluru-Mumbai railway corridor. The city is connected by NH 48 and other roads. Bengaluru is the nearest major international-airport gateway.",
+    "see": "Multiple fortification walls, gateways, bastions, temples, reservoirs, Hidimbeshwara Temple and granite hill formations.",
+    "do": "Walk through the fort, climb hill sections, explore defensive architecture and photograph the granite landscape.",
+    "eat": "Ragi mudde, jolada rotti, ennegayi, saaru, rice meals and North Karnataka-style snacks.",
+    "sleep": "KSTDC accommodation, hotels, lodges and guesthouses are available in Chitradurga.",
+    "latitude": 14.2266,
+    "longitude": 76.398,
+    "best_time": "Oct-Feb",
+    "duration": "3-4 hours",
+    "tags": [
+      "Fort",
+      "Nayaka",
+      "Granite"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800"
+    ],
+    "id": "10",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Kadri Manjunath Temple",
+    "category": "Temples",
+    "state": "Karnataka",
+    "district": "Dakshina Kannada",
+    "description": "Kadri Manjunath Temple in Mangaluru is an important historic Shaiva temple dedicated to Manjunatha. The temple is situated on Kadri Hill and is associated with the religious history of coastal Karnataka. The complex includes the main shrine, subsidiary shrines, ponds and the hill landscape.\n\nKadri is also significant for its connection with the broader traditions of Shaivism and the Nath tradition in coastal Karnataka. The temple remains an active place of worship and visitors should respect local customs and restrictions.",
+    "get_in": "Mangaluru International Airport is approximately 15 km away. Mangaluru Central and Mangaluru Junction are the principal railway stations. Mangaluru has extensive road connectivity through NH 66 and other highways.",
+    "see": "Manjunathaswamy shrine, bronze image traditions, temple architecture, natural springs and Kadri Hill.",
+    "do": "Temple visit, heritage observation, photography where permitted and exploration of nearby Mangaluru cultural sites.",
+    "eat": "Neer dosa, goli baje, Mangaluru buns, kori rotti, pathrode and coastal Karnataka vegetarian food.",
+    "sleep": "Hotels, homestays, guesthouses and eco-oriented coastal accommodation are widely available in Mangaluru and surrounding areas.",
+    "latitude": 12.8907,
+    "longitude": 74.8596,
+    "best_time": "Oct-Mar",
+    "duration": "2-3 hours",
+    "tags": [
+      "Shaivism",
+      "Mangaluru",
+      "Temple"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "11",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Davanagere Benne Dose",
+    "category": "Cuisine",
+    "state": "Karnataka",
+    "district": "Davanagere",
+    "description": "Davanagere is widely associated with benne dose, a dosa traditionally prepared with butter and served as a distinctive local breakfast. The dish developed a strong identity in the city and is now one of Karnataka's best-known regional culinary specialities.\n\nThe food tradition forms part of central Karnataka's wider culinary culture, where dosa, ragi preparations, rice dishes and vegetarian accompaniments are common. A food-focused visit provides an opportunity to experience the city's regional culinary identity.",
+    "get_in": "Davanagere railway station is a major station on the Bengaluru-Mumbai railway corridor. Shivamogga and Hubballi provide regional airport options, while Bengaluru provides the main international gateway. Davanagere has excellent road connectivity through NH 48.",
+    "see": "Traditional benne dose eateries, local markets, city streets and nearby cultural attractions.",
+    "do": "Taste benne dose, explore local food establishments and markets and combine the food trail with nearby heritage destinations.",
+    "eat": "Davanagere benne dose, idli, vada, mandakki, mirchi bajji and Karnataka breakfast foods.",
+    "sleep": "Hotels, lodges and guesthouses are widely available in Davanagere.",
+    "latitude": 14.4644,
+    "longitude": 75.9218,
+    "best_time": "Year-round",
+    "duration": "2-4 hours",
+    "tags": [
+      "Benne Dose",
+      "Food",
+      "Central Karnataka"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1630383249896-424e482df921?w=800"
+    ],
+    "id": "12",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Dharwad Pedha",
+    "category": "Cuisine",
+    "state": "Karnataka",
+    "district": "Dharwad",
+    "description": "Dharwad is closely associated with Dharwad pedha, a milk-based sweet traditionally prepared from milk solids and sugar. The sweet developed a strong identity in Dharwad and is now an established part of Karnataka's culinary heritage.\n\nDharwad's wider food culture reflects North Karnataka and neighbouring Deccan influences. A culinary visit can combine the pedha tradition with regional vegetarian foods and the city's long-standing cultural associations with music and education.",
+    "get_in": "Hubballi Airport is the nearest airport and serves the Hubballi-Dharwad region. Dharwad railway station is on the Bengaluru-Mumbai railway corridor. Dharwad has road connections with Bengaluru, Goa, Belagavi and northern Karnataka.",
+    "see": "Traditional pedha shops, local markets, historic urban areas and nearby cultural landmarks.",
+    "do": "Taste Dharwad pedha, explore local food shops, visit markets and experience the city's cultural institutions.",
+    "eat": "Dharwad pedha, jolada rotti, ennegayi, North Karnataka vegetarian meals and local snacks.",
+    "sleep": "Hotels, guesthouses and serviced accommodation are widely available in Dharwad and Hubballi.",
+    "latitude": 15.4589,
+    "longitude": 75.0078,
+    "best_time": "Year-round",
+    "duration": "2-4 hours",
+    "tags": [
+      "Dharwad Pedha",
+      "Cuisine",
+      "North Karnataka"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800"
+    ],
+    "id": "13",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Lakkundi",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Gadag",
+    "description": "Lakkundi is a historic settlement in Gadag district renowned for medieval temples and stepwells. The site flourished particularly under the Western Chalukyas and contains important examples of the sophisticated stone architecture associated with the Kalyani Chalukyan period.\n\nKashi Vishwanatha Temple, Brahma Jinalaya and historic stepwells are among the principal monuments. Lakkundi is important for understanding the development of Deccan temple architecture between earlier Chalukyan and later Hoysala traditions.",
+    "get_in": "Gadag railway station is the principal railhead and connects with major Karnataka cities. Hubballi Airport is the nearest major airport, approximately 60 km away. Lakkundi is connected by road to Gadag and nearby heritage sites.",
+    "see": "Kashi Vishwanatha Temple, Brahma Jinalaya, Nanneshwara Temple and historic stepwells.",
+    "do": "Explore the temples, study Chalukyan architecture, photograph carvings and visit other heritage sites around Gadag.",
+    "eat": "Jolada rotti, ennegayi, North Karnataka vegetable curries, rice meals and local sweets.",
+    "sleep": "Hotels and guesthouses are available in Gadag, with additional accommodation in nearby towns.",
+    "latitude": 15.3848,
+    "longitude": 75.4617,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 hours",
+    "tags": [
+      "Western Chalukya",
+      "Temples",
+      "Stepwells"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "14",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Hoysaleswara Temple",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Hassan",
+    "description": "Hoysaleswara Temple at Halebidu is one of the finest surviving monuments of Hoysala architecture. The temple was built in the 12th century during the Hoysala period and is dedicated to Shiva. Its exterior walls contain highly detailed sculptures depicting deities, dancers, animals, mythological scenes and decorative motifs.\n\nHalebidu, historically known as Dorasamudra, was an important Hoysala capital. Together with the Chennakeshava Temple at Belur and the Keshava Temple at Somanathapura, the Hoysala Sacred Ensembles were inscribed as a UNESCO World Heritage Site in 2023.",
+    "get_in": "Mangaluru International Airport is a practical airport gateway, while Mysuru and Bengaluru provide additional options. Hassan railway station is the nearest major rail station. Halebidu is connected by road with Hassan, Belur and Chikkamagaluru.",
+    "see": "Hoysaleswara Temple, detailed friezes, Shiva sculptures, Nandi shrines and nearby archaeological remains.",
+    "do": "Study temple architecture, photography, heritage walks and visits to nearby Belur.",
+    "eat": "Akki rotti, ragi mudde, kadubu, Karnataka vegetarian meals and local snacks.",
+    "sleep": "Hotels, guesthouses, homestays and plantation stays are available around Hassan and Belur.",
+    "latitude": 13.2129,
+    "longitude": 75.9944,
+    "best_time": "Oct-Mar",
+    "duration": "2-3 hours",
+    "tags": [
+      "Hoysala",
+      "UNESCO",
+      "Temple"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "15",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Kaginele",
+    "category": "Culture",
+    "state": "Karnataka",
+    "district": "Haveri",
+    "description": "Kaginele is a culturally significant place in Haveri district associated with Kanakadasa, one of Karnataka's major poet-saints and a prominent figure in the Haridasa tradition. Kanakadasa's literary and devotional works are an important part of Kannada cultural history.\n\nThe site includes the Kanakadasa memorial and religious-cultural institutions associated with his legacy. Kaginele therefore represents the literary, devotional and social history of Karnataka rather than being solely a conventional monument destination.",
+    "get_in": "Haveri railway station is a practical rail gateway and lies on the Bengaluru-Mumbai railway corridor. Hubballi Airport is the nearest major airport. Kaginele is connected by road with Haveri and nearby towns.",
+    "see": "Kanakadasa memorial, local religious institutions and the surrounding rural landscape.",
+    "do": "Learn about Kanakadasa's literary heritage, visit the memorial and explore the surrounding cultural landscape.",
+    "eat": "Jolada rotti, ennegayi, North Karnataka vegetarian dishes, rice meals and local sweets.",
+    "sleep": "Hotels and guesthouses are available in Haveri and nearby towns.",
+    "latitude": 14.74,
+    "longitude": 75.31,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 hours",
+    "tags": [
+      "Kanakadasa",
+      "Kannada",
+      "Culture"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "16",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Sannati Archaeological Site",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Kalaburagi",
+    "description": "Sannati is an important archaeological site on the Bhima River in Kalaburagi district. Archaeological investigations have revealed Buddhist remains, including a stupa and sculptural material, with evidence associated with ancient Deccan history.\n\nThe site is significant for understanding the spread and development of Buddhism in the Deccan and the historical connections of northern Karnataka with wider religious and cultural networks. Its archaeological character distinguishes it from the later medieval monuments found elsewhere in the district.",
+    "get_in": "Kalaburagi railway station is the principal rail gateway. Kalaburagi Airport provides regional air access. Sannati is reached by road from Kalaburagi and nearby towns.",
+    "see": "Buddhist stupa remains, archaeological structures, sculptures and the Bhima River landscape.",
+    "do": "Visit archaeological remains, study Buddhist art and architecture, photograph the site and explore nearby historical locations.",
+    "eat": "Jolada rotti, North Karnataka vegetable curries, ragi dishes, rice meals and regional snacks.",
+    "sleep": "Hotels and guesthouses are concentrated in Kalaburagi and nearby towns.",
+    "latitude": 16.9845,
+    "longitude": 76.16,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 hours",
+    "tags": [
+      "Buddhism",
+      "Archaeology",
+      "Deccan"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "17",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Madikeri Fort",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Kodagu",
+    "description": "Madikeri Fort is a historic fort complex in the centre of Madikeri, the headquarters of Kodagu district. The fort has undergone rebuilding and modification under different rulers, including the Haleri rulers and Tipu Sultan, and later came under British administration.\n\nThe complex contains palace buildings and religious structures within the fort precinct. Its elevated location in the Kodagu highlands provides a connection between the political history of the region and the distinctive mountainous landscape of Coorg.",
+    "get_in": "Mangaluru International Airport is the nearest major airport of practical significance. Mysuru railway station is a major rail gateway for Kodagu. Madikeri is connected by road with Mysuru, Mangaluru, Hassan and Kerala.",
+    "see": "Fort walls, palace complex, museum, church and panoramic views from the elevated town.",
+    "do": "Explore the fort, visit the museum, study Kodagu history and combine the visit with nearby plantations and viewpoints.",
+    "eat": "Kadambuttu, akki rotti, noolputtu, pandi curry and Kodagu-style vegetarian dishes.",
+    "sleep": "Coffee-estate homestays, plantation stays, eco-resorts, hotels and guesthouses are widely available.",
+    "latitude": 12.4244,
+    "longitude": 75.7382,
+    "best_time": "Oct-Mar",
+    "duration": "2-3 hours",
+    "tags": [
+      "Kodagu",
+      "Fort",
+      "Coorg"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800"
+    ],
+    "id": "18",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Kolaramma Temple",
+    "category": "Temples",
+    "state": "Karnataka",
+    "district": "Kolar",
+    "description": "Kolaramma Temple in Kolar is an important historic temple dedicated to Kolaramma, the presiding deity of Kolar. The temple is associated with the region's long religious history and contains architectural elements connected with medieval Karnataka temple traditions.\n\nKolar has historically occupied an important position between the eastern Karnataka plains and the Bengaluru region. The temple remains a living place of worship, so visitors should follow local customs concerning dress, photography and access to ritual areas.",
+    "get_in": "Kempegowda International Airport is approximately 70 km away. Kolar railway station provides rail access from Bengaluru and other destinations. Kolar is connected by road with Bengaluru and Andhra Pradesh.",
+    "see": "Kolaramma Temple architecture, stone carvings, shrine complex and surrounding historic Kolar town.",
+    "do": "Visit the temple, observe traditional architecture and explore other historic and religious sites in Kolar.",
+    "eat": "Ragi mudde, dosa, idli, vada, South Indian vegetarian meals and local snacks.",
+    "sleep": "Hotels, lodges and guesthouses are available in Kolar, with additional accommodation in Bengaluru.",
+    "latitude": 13.1367,
+    "longitude": 78.1292,
+    "best_time": "Oct-Feb",
+    "duration": "1-2 hours",
+    "tags": [
+      "Temple",
+      "Kolar",
+      "Heritage"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "19",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Anegundi",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Koppal",
+    "description": "Anegundi is an ancient settlement on the northern bank of the Tungabhadra River opposite the main Hampi landscape. It is associated with the wider history of the Vijayanagara region and is traditionally connected with Kishkindha in the Ramayana tradition. The settlement contains temples, fortifications and traditional houses.\n\nAnegundi forms part of the broader Hampi cultural landscape and preserves a more village-oriented heritage environment. The surrounding granite hills, river landscape and agricultural fields are important components of its cultural character.",
+    "get_in": "Jindal Vijayanagar Airport is the nearest operational regional airport of significance. Hosapete Junction is the principal railway station for the Hampi-Anegundi region. Anegundi is accessible by road from Hosapete and Gangavathi.",
+    "see": "Anjanadri Hill, Pampa Sarovara, Ranganatha Temple, Gagan Mahal, village heritage buildings and Tungabhadra river landscape.",
+    "do": "Heritage walks, cycling, hill climbing, photography, temple visits and exploration of the Tungabhadra landscape.",
+    "eat": "North Karnataka vegetarian meals, jolada rotti, ennegayi, ragi dishes and local snacks.",
+    "sleep": "Homestays, heritage-style guesthouses, eco-oriented stays and accommodation around Hampi and Hosapete.",
+    "latitude": 15.3475,
+    "longitude": 76.4707,
+    "best_time": "Oct-Feb",
+    "duration": "1 day",
+    "tags": [
+      "Vijayanagara",
+      "Kishkindha",
+      "Heritage"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800"
+    ],
+    "id": "20",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Melukote",
+    "category": "Temples",
+    "state": "Karnataka",
+    "district": "Mandya",
+    "description": "Melukote is a historic hill settlement and important Sri Vaishnava pilgrimage centre in Mandya district. The town is closely associated with Ramanuja, the philosopher and theologian of the Sri Vaishnava tradition. Cheluvanarayana Swamy Temple is the principal shrine, while Yoga Narasimha Temple is situated on the hill above the settlement.\n\nMelukote is also known for traditional temple culture, festivals and rocky hill landscape. Its religious history and architecture make it one of southern Karnataka's important cultural destinations.",
+    "get_in": "Mysuru Airport is the nearest commercial airport. Mandya and Mysuru railway stations are practical rail gateways. Melukote is connected by road from Mandya, Mysuru and Bengaluru.",
+    "see": "Cheluvanarayana Swamy Temple, Yoga Narasimha Temple, Kalyani, temple streets and hilltop views.",
+    "do": "Temple visits, heritage walks, hill climbing, photography and experiencing traditional festivals when scheduled.",
+    "eat": "Puliyogare, sakkare pongal, South Indian vegetarian meals, ragi dishes and local temple food.",
+    "sleep": "Guesthouses, homestays and hotels are available around Melukote, with larger accommodation options in Mandya and Mysuru.",
+    "latitude": 12.6639,
+    "longitude": 76.6485,
+    "best_time": "Oct-Mar",
+    "duration": "Half day",
+    "tags": [
+      "Vaishnavism",
+      "Ramanuja",
+      "Temple"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "21",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Mysuru Palace",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Mysuru",
+    "description": "Mysuru Palace, also known as Amba Vilas Palace, is the principal royal palace of Mysuru and the former residence of the Wadiyar dynasty. The present palace was designed by British architect Henry Irwin and completed in 1912 after the previous palace was destroyed by fire.\n\nThe building combines Indo-Saracenic, Hindu, Muslim, Rajput and Gothic architectural influences. The palace is closely associated with Mysuru Dasara and is one of Karnataka's most visited heritage attractions.",
+    "get_in": "Mysuru Airport provides regional air access. Mysuru Junction is the principal railway station. Mysuru is connected by road with Bengaluru, Hassan, Kodagu, Wayanad and other destinations.",
+    "see": "Durbar Hall, Ambavilasa, Kalyana Mantapa, palace courtyards, royal collections and the illuminated exterior on designated evenings.",
+    "do": "Explore the palace museum, study royal architecture, photograph the exterior and visit nearby Mysuru heritage attractions.",
+    "eat": "Mysuru pak, masala dosa, idli-vada, ragi dishes, Karnataka vegetarian meals and filter coffee.",
+    "sleep": "Hotels, heritage properties, homestays and KSTDC accommodation are available across Mysuru.",
+    "latitude": 12.3052,
+    "longitude": 76.6552,
+    "best_time": "Oct-Mar",
+    "duration": "2-3 hours",
+    "tags": [
+      "Wadiyar",
+      "Palace",
+      "Dasara"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800"
+    ],
+    "id": "22",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Raichur Fort",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Raichur",
+    "description": "Raichur Fort is a major historic fortification in the Raichur Doab, the strategically important land between the Krishna and Tungabhadra rivers. The fort has a long history and was contested by major Deccan powers, including the Vijayanagara Empire and the Bahmani and Bijapur Sultanates.\n\nIts massive stone walls, gateways and elevated position reflect the military importance of Raichur during medieval Deccan conflicts. The surrounding landscape is predominantly semi-arid and agricultural, characteristic of the northern Karnataka interior.",
+    "get_in": "Raichur railway station is a major rail junction connecting Bengaluru, Hyderabad and northern Karnataka. Rajiv Gandhi International Airport in Hyderabad is the nearest major international airport. Raichur is connected by road with Bengaluru, Hyderabad, Kalaburagi and Ballari.",
+    "see": "Fort walls, gateways, bastions, temples and panoramic views of Raichur.",
+    "do": "Explore the fort, study military architecture, photograph historic structures and visit other heritage sites in the district.",
+    "eat": "Jolada rotti, ennegayi, ragi mudde, North Karnataka curries and regional sweets.",
+    "sleep": "Hotels, lodges and guesthouses are available in Raichur.",
+    "latitude": 16.2076,
+    "longitude": 77.3463,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 hours",
+    "tags": [
+      "Fort",
+      "Deccan",
+      "Vijayanagara"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800"
+    ],
+    "id": "23",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Ramanagara Hills",
+    "category": "Hills",
+    "state": "Karnataka",
+    "district": "Ramanagara",
+    "description": "Ramanagara is a landscape of prominent granite hills and rocky outcrops south-west of Bengaluru. The region is known for its distinctive monolithic formations and traditional silk-producing economy. Its rugged terrain has also made it a recognised destination for outdoor recreation.\n\nThe rocky landscape provides habitat for dryland species and birds. Responsible tourism is important around climbing and trekking areas, particularly where routes cross sensitive habitats or private land.",
+    "get_in": "Kempegowda International Airport is the nearest major airport. Ramanagara railway station lies on the Bengaluru-Mysuru railway route. The town is connected to Bengaluru and Mysuru by road.",
+    "see": "Granite hills, rocky viewpoints, countryside and traditional silk-related areas.",
+    "do": "Rock climbing where authorised, trekking, hiking, birdwatching and landscape photography.",
+    "eat": "Ragi mudde, akki rotti, idli, dosa, Karnataka vegetarian meals and local snacks.",
+    "sleep": "Resorts, farm stays, homestays and hotels are available around Ramanagara.",
+    "latitude": 12.721,
+    "longitude": 77.2815,
+    "best_time": "Oct-Feb",
+    "duration": "Half day to 1 day",
+    "tags": [
+      "Granite",
+      "Trekking",
+      "Silk"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800"
+    ],
+    "id": "24",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Jog Falls",
+    "category": "Eco-Tourism",
+    "state": "Karnataka",
+    "district": "Shivamogga",
+    "description": "Jog Falls is formed by the Sharavathi River in the Western Ghats and is one of India's best-known waterfall destinations. The river drops over a rocky escarpment, producing the four principal falls commonly known as Raja, Rani, Roarer and Rocket.\n\nThe waterfall is part of a forested Western Ghats landscape and is strongly seasonal, with its greatest flow during and after the southwest monsoon. The surrounding Sharavathi basin is ecologically important and requires responsible visitor management.",
+    "get_in": "Mangaluru International Airport is a major airport option, while Shivamogga Airport provides regional access. Sagara railway station is the nearest important railhead. Jog Falls is connected by road with Sagara, Shivamogga, Honnavar and other Karnataka towns.",
+    "see": "Main Jog Falls viewpoints, Sharavathi valley, surrounding Western Ghats forests and river landscape.",
+    "do": "Waterfall viewing, photography, nature observation and permitted walks around designated viewpoints.",
+    "eat": "Malnad vegetarian food, akki rotti, kadubu, pathrode, rice meals and local snacks.",
+    "sleep": "KSTDC accommodation, homestays, eco-resorts and hotels are available around Jog Falls and Sagara.",
+    "latitude": 14.2294,
+    "longitude": 74.807,
+    "best_time": "Jul-Oct",
+    "duration": "Half day",
+    "tags": [
+      "Waterfall",
+      "Sharavathi",
+      "Western Ghats"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800"
+    ],
+    "id": "25",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Devarayanadurga",
+    "category": "Hills",
+    "state": "Karnataka",
+    "district": "Tumakuru",
+    "description": "Devarayanadurga is a hill range near Tumakuru known for rocky terrain, forested slopes and hilltop temples. The principal religious sites include the Bhoga Narasimha and Yoga Narasimha temples, situated at different levels of the hill landscape.\n\nThe hills form part of the dryland landscape of eastern Karnataka and provide a nearby trekking and nature destination for Bengaluru and Tumakuru. The combination of forest, rocky terrain and temple architecture gives the area cultural and ecological significance.",
+    "get_in": "Kempegowda International Airport is the nearest major airport. Tumakuru railway station is the principal railhead. Devarayanadurga is connected by road with Tumakuru and Bengaluru.",
+    "see": "Bhoga Narasimha Temple, Yoga Narasimha Temple, hill viewpoints, rocky terrain and forest landscapes.",
+    "do": "Trekking, hiking, temple visits, photography and nature observation.",
+    "eat": "Ragi mudde, dosa, idli, Karnataka vegetarian meals and local snacks in Tumakuru and nearby towns.",
+    "sleep": "Hotels and guesthouses are available in Tumakuru, with farm stays and rural accommodation in the wider region.",
+    "latitude": 13.4045,
+    "longitude": 77.21,
+    "best_time": "Oct-Feb",
+    "duration": "Half day",
+    "tags": [
+      "Hill",
+      "Narasimha",
+      "Trekking"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800"
+    ],
+    "id": "26",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Sri Krishna Matha",
+    "category": "Temples",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "description": "Sri Krishna Matha in Udupi is one of Karnataka's most important Vaishnava religious institutions and is closely associated with Madhvacharya, the 13th-century philosopher who founded the Dvaita school of Vedanta. The Krishna tradition at Udupi developed around the temple and the network of eight monasteries known as the Ashta Mathas.\n\nThe temple remains a living centre of worship and religious learning. The deity is traditionally viewed through the Kanakana Kindi window, associated with the devotional tradition of Kanakadasa. Visitors should observe temple-specific rules regarding dress, photography and access.",
+    "get_in": "Mangaluru International Airport is approximately 60 km away. Udupi railway station is on the Konkan Railway. Udupi is connected by NH 66 and other roads to Mangaluru, Kundapura, Goa and Kerala.",
+    "see": "Sri Krishna shrine, Kanakana Kindi, temple courtyard, Ashta Matha institutions and surrounding heritage streets.",
+    "do": "Temple visit, observe religious rituals where permitted, explore Udupi's heritage area and experience local vegetarian cuisine.",
+    "eat": "Udupi-style vegetarian food, masala dosa, idli, vada, neer dosa, goli baje and traditional temple meals.",
+    "sleep": "Temple-linked guesthouses, hotels, homestays and budget accommodation are available in Udupi.",
+    "latitude": 13.3409,
+    "longitude": 74.7514,
+    "best_time": "Oct-Mar",
+    "duration": "2-4 hours",
+    "tags": [
+      "Krishna",
+      "Madhva",
+      "Temple"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ],
+    "id": "27",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Gokarna",
+    "category": "Coast",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "description": "Gokarna is a coastal pilgrimage town in Uttara Kannada known for the Mahabaleshwara Temple and beaches including Om Beach and Kudle Beach. The town has long-standing religious importance associated with Shiva worship and the Atmalinga tradition.\n\nThe coastline combines rocky headlands, sandy beaches and Arabian Sea landscapes. Its religious importance and beach tourism coexist within a compact coastal area, making responsible waste management and respect for religious customs important.",
+    "get_in": "Manohar International Airport in Goa and Dabolim Airport are practical airport gateways. Gokarna Road railway station is the nearest main rail station. Gokarna is connected by road with Kumta, Karwar, Hubballi and Goa.",
+    "see": "Mahabaleshwara Temple, Koti Teertha, Om Beach, Kudle Beach, Half Moon Beach and coastal viewpoints.",
+    "do": "Beach walks, coastal hiking, swimming where conditions permit, temple visits, photography and permitted water activities.",
+    "eat": "Neer dosa, coastal Karnataka vegetarian food, goli baje, rice meals and coconut-based local preparations.",
+    "sleep": "Homestays, guesthouses, eco-conscious beach stays and hotels are available around Gokarna.",
+    "latitude": 14.5479,
+    "longitude": 74.3188,
+    "best_time": "Oct-Mar",
+    "duration": "1-2 days",
+    "tags": [
+      "Beach",
+      "Pilgrimage",
+      "Coast"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+    ],
+    "id": "28",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Hampi",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Vijayanagara",
+    "description": "Hampi is the monumental remains of the capital of the Vijayanagara Empire, which flourished particularly from the 14th to 16th centuries. The archaeological landscape contains temples, bazaars, royal structures, water systems and fortifications distributed across a dramatic granite and riverine setting.\n\nThe Group of Monuments at Hampi is a UNESCO World Heritage Site. The Tungabhadra River, granite boulder formations and archaeological remains together form a cultural landscape of exceptional significance. Conservation and visitor management are important because the site contains extensive fragile archaeological structures.",
+    "get_in": "Jindal Vijayanagar Airport is the nearest operational airport of significance. Hosapete Junction is the principal railway station. Hampi is connected by road with Hosapete, Ballari, Gadag and other Karnataka destinations.",
+    "see": "Virupaksha Temple, Vittala Temple and Stone Chariot, Lotus Mahal, Queen's Bath, Hazara Rama Temple, Royal Enclosure and Tungabhadra River.",
+    "do": "Heritage walks, cycling, photography, temple visits, archaeological exploration and permitted coracle experiences.",
+    "eat": "North Karnataka vegetarian meals, jolada rotti, ennegayi, ragi dishes and South Indian vegetarian food.",
+    "sleep": "Homestays, guesthouses, heritage-style stays and hotels are available in Hampi and Hosapete.",
+    "latitude": 15.335,
+    "longitude": 76.46,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 days",
+    "tags": [
+      "UNESCO",
+      "Vijayanagara",
+      "Archaeology"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800"
+    ],
+    "id": "29",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Gol Gumbaz",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Vijayapura",
+    "description": "Gol Gumbaz is the mausoleum of Mohammed Adil Shah, the seventh ruler of the Bijapur Sultanate. Construction began in the 17th century, and the monument is particularly famous for its enormous dome and monumental Deccan architecture.\n\nThe structure's whispering gallery, massive dome and four corner towers make it one of the most recognisable monuments of northern Karnataka. Vijayapura contains many additional monuments from the Adil Shahi period, making the city an important destination for Deccan architectural heritage.",
+    "get_in": "Vijayapura railway station is the principal rail station. Kalaburagi and Hubballi provide practical airport options depending on route. Vijayapura is connected by road with Solapur, Kalaburagi, Bagalkote and Bengaluru.",
+    "see": "Gol Gumbaz dome, whispering gallery, corner minarets, surrounding gardens and nearby Adil Shahi monuments.",
+    "do": "Explore the monument, experience its acoustic gallery, photograph the architecture and visit nearby Bijapur heritage sites.",
+    "eat": "Jolada rotti, North Karnataka vegetarian dishes, ennegayi, rice meals and regional sweets.",
+    "sleep": "Hotels, guesthouses and budget accommodation are available throughout Vijayapura.",
+    "latitude": 16.8302,
+    "longitude": 75.7396,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 hours",
+    "tags": [
+      "Adil Shahi",
+      "Deccan",
+      "Mausoleum"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800"
+    ],
+    "id": "30",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  },
+  {
+    "name": "Yadgir Fort",
+    "category": "Heritage",
+    "state": "Karnataka",
+    "district": "Yadgir",
+    "description": "Yadgir Fort is a historic hill fort in Yadgir district, occupying an elevated granite hill overlooking the town. The fort and surrounding region have been associated with several Deccan political powers and reflect the strategic importance of the northern Karnataka plateau.\n\nThe hilltop position provides views across the surrounding dryland landscape. Yadgir district contains additional historical and religious sites, making the fort a useful starting point for understanding the region's Deccan heritage.",
+    "get_in": "Yadgir railway station provides rail access on the Bengaluru-Hyderabad railway corridor. Rajiv Gandhi International Airport in Hyderabad is the nearest major international airport. Yadgir has road connections with Kalaburagi, Raichur, Hyderabad and Bengaluru.",
+    "see": "Hilltop fortifications, gateways, stone structures and panoramic views over Yadgir.",
+    "do": "Climb the fort, explore its remains, photograph the landscape and visit nearby historical sites.",
+    "eat": "Jolada rotti, ennegayi, ragi dishes, North Karnataka curries and regional sweets.",
+    "sleep": "Hotels, lodges and guesthouses are available in Yadgir and nearby towns.",
+    "latitude": 16.7635,
+    "longitude": 77.136,
+    "best_time": "Oct-Feb",
+    "duration": "2-3 hours",
+    "tags": [
+      "Fort",
+      "Deccan",
+      "Yadgir"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800"
+    ],
+    "id": "31",
+    "created_at": "2026-10-07T17:29:33.883Z"
+  }
+]
