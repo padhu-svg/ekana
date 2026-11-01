@@ -574,7 +574,7 @@ const AdminDashboard = () => {
             >
               <div className="h-48 overflow-hidden">
                 <img
-                  src={place.images?.[0] || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500'}
+                  src={place.images?.[0] || '/images/places/district_29_hampi.jpg'}
                   alt={place.name}
                   className="w-full h-full object-cover"
                 />

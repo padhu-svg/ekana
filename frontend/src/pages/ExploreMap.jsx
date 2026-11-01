@@ -303,7 +303,7 @@ const ExploreMap = () => {
                       {/* Thumbnail */}
                       <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden shrink-0 relative bg-gray-100">
                         <img 
-                          src={place.images?.[0] || 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400'} 
+                          src={place.images?.[0] || '/images/places/district_29_hampi.jpg'} 
                           alt={place.name}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />

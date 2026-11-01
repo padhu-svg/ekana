@@ -18,7 +18,7 @@ const Community = () => {
       location: 'Chikkamagaluru', 
       rating: 4.9, 
       reviews: 142, 
-      img: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800', 
+      img: '/images/themes/theme_hills.jpg', 
       desc: 'Authentic Malnad plantation home nestled within coffee estates. Enjoy home-cooked akki rotti, bird-watching trails, and estate walks with the host family.',
       contact: { phone: '+91 94801 22340', email: 'gowda.estate@ekana.life' }
     },
@@ -29,7 +29,7 @@ const Community = () => {
       location: 'Hampi (Vijayanagara)', 
       rating: 4.9, 
       reviews: 318, 
-      img: 'https://images.unsplash.com/photo-1600100397608-f010f443b74e?w=800', 
+      img: '/images/places/district_29_hampi.jpg', 
       desc: 'Archaeological historian with 14 years of storytelling experience across Vijayanagara ruins, offering guided bicycle and sunset walking trails.',
       contact: { phone: '+91 98450 67120', email: 'ramesh.hampi@ekana.life' }
     },
@@ -40,7 +40,7 @@ const Community = () => {
       location: 'Mysuru', 
       rating: 4.8, 
       reviews: 96, 
-      img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800', 
+      img: '/images/places/district_22_mysuru_palace.jpg', 
       desc: 'Private masterclasses with 3rd-generation weavers. Learn the historic jacquard loom technique, gold zari extraction, and buy directly from artisan cooperatives.',
       contact: { phone: '+91 821 244 8901', email: 'silk.weavers@ekana.life' }
     },
@@ -51,7 +51,7 @@ const Community = () => {
       location: 'Gokarna (Uttara Kannada)', 
       rating: 4.7, 
       reviews: 164, 
-      img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800', 
+      img: '/images/places/district_28_murudeshwar_gokarna.jpg', 
       desc: 'Eco-friendly bamboo cottages just 3 minutes from Kudle Beach. Savor home-cooked Konkani meals, fresh coconut water, and gentle coastal breezes.',
       contact: { phone: '+91 97410 88219', email: 'karavali.palm@ekana.life' }
     },
@@ -62,7 +62,7 @@ const Community = () => {
       location: 'Kodagu (Coorg)', 
       rating: 4.9, 
       reviews: 215, 
-      img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800', 
+      img: '/images/themes/theme_hills.jpg', 
       desc: 'Certified indigenous eco-guides guiding responsible day hikes to Tadiandamol and Brahmagiri. Strict pack-it-in zero waste protocols.',
       contact: { phone: '+91 94480 34112', email: 'shola.treks@ekana.life' }
     },
@@ -73,7 +73,7 @@ const Community = () => {
       location: 'Mandya', 
       rating: 4.8, 
       reviews: 84, 
-      img: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800', 
+      img: '/images/places/mandya_cauvery.jpg', 
       desc: 'Experience rural Karnataka farm life. Harvest fresh sugarcane, taste pure artisanal jaggery straight from the vats, and enjoy farm-to-table meals.',
       contact: { phone: '+91 96110 55902', email: 'mandya.farms@ekana.life' }
     },

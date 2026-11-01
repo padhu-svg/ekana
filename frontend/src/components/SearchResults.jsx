@@ -42,7 +42,7 @@ const SearchResults = ({ results, onClose }) => {
           >
             <div className="flex items-center space-x-3.5 min-w-0">
               <img
-                src={place.images?.[0] || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=100'}
+                src={place.images?.[0] || '/images/places/district_29_hampi.jpg'}
                 alt={place.name}
                 className="w-14 h-14 object-cover rounded-xl shrink-0 group-hover:scale-105 transition-transform duration-300"
               />

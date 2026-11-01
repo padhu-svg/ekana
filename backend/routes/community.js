@@ -9,7 +9,7 @@ const community = [
     type: 'Homestay',
     district: 'Coorg',
     description: 'Traditional Kodava homestay with authentic local cuisine',
-    images: ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500'],
+    images: ['/images/places/district_18_madikeri_coorg.jpg'],
     phone: '+91 98765 43210',
     email: 'ravi@homestay.com'
   }

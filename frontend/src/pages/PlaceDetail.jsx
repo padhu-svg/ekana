@@ -33,11 +33,11 @@ const PlaceDetail = () => {
           climate: `${placeName} experiences a tropical climate with distinct seasons. Winter months offer pleasant weather ideal for exploration.`
         },
         images: [
-          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center',
-          'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=600&fit=crop&crop=center',
-          'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=600&fit=crop&crop=center',
-          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop&crop=center',
-          'https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=800&h=600&fit=crop&crop=center'
+          '/images/places/district_29_hampi.jpg',
+          '/images/places/district_22_mysuru_palace.jpg',
+          '/images/themes/theme_hills.jpg',
+          '/images/places/district_25_jog_falls.jpg',
+          '/images/places/district_1_badami.jpg'
         ],
         rating: '4.2',
         bestTime: 'October to March (Pleasant weather, ideal for sightseeing)',

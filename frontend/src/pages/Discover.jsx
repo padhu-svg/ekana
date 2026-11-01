@@ -267,7 +267,7 @@ const Discover = () => {
                   >
                     <div className="relative h-48 overflow-hidden">
                       <img
-                        src={destination.images?.[0] || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500'}
+                        src={destination.images?.[0] || '/images/places/district_29_hampi.jpg'}
                         alt={destination.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                       />

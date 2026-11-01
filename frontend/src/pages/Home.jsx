@@ -21,43 +21,43 @@ const CIRCUIT_PREVIEWS = {
     title: 'Chalukya & Vijayanagara Heritage',
     desc: 'Step into millennia of stone poetry, intricate rock-cut cave temples, and UNESCO World Heritage sites.',
     places: ['Badami', 'Hampi', 'Pattadakal', 'Belur', 'Aihole'],
-    img: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=1000&auto=format&fit=crop'
+    img: '/images/themes/theme_heritage.jpg'
   },
   'Hills': {
     title: 'Misty Western Ghats & Coffee Highlands',
     desc: 'Rolling emerald shola forests, aromatic coffee plantations, and the highest trekking peaks in South India.',
     places: ['Chikkamagaluru', 'Kodagu (Coorg)', 'Kudremukh', 'Kemmanagundi'],
-    img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1000&auto=format&fit=crop'
+    img: '/images/themes/theme_hills.jpg'
   },
   'Wildlife': {
     title: 'Untamed Jungles & Elephant Corridors',
     desc: 'Home to the world’s highest density of tigers and Asian elephants in protected evergreen sanctuaries.',
     places: ['Kabini', 'Nagarhole', 'Bandipur', 'Bhadra Reserve'],
-    img: 'https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1000&auto=format&fit=crop'
+    img: '/images/themes/theme_wildlife.jpg'
   },
   'Coast': {
     title: 'Karavali Golden Sands & Sacred Coves',
     desc: 'Unspoiled coastal shorelines where the Arabian Sea meets the lush foothills of the Western Ghats.',
     places: ['Gokarna', 'Udupi Malpe', 'Karwar', 'Murudeshwar'],
-    img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop'
+    img: '/images/themes/theme_coast.jpg'
   },
   'Culture': {
     title: 'Living Traditions, Yakshagana & Crafts',
     desc: 'Centuries-old folk theater, delicate Mysore silk weaving, and vibrant village craft heritage.',
     places: ['Mysuru', 'Udupi', 'Kinnal', 'Ilkal'],
-    img: 'https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?w=1000&auto=format&fit=crop'
+    img: '/images/themes/theme_culture.jpg'
   },
   'Eco-Tourism': {
     title: 'Responsible Trails & Rural Homestays',
     desc: 'Experience zero-waste village living, community organic farms, and biodiversity conservation trails.',
     places: ['Mandya', 'Agumbe', 'Dandeli', 'BR Hills'],
-    img: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1000&auto=format&fit=crop'
+    img: '/images/themes/theme_eco.jpg'
   },
   'Cuisine': {
     title: 'Authentic Flavors of Karnataka',
     desc: 'From fiery Mangaluru Ghee Roast and fresh Neer Dosa to wholesome North Karnataka Jolada Rotti meals.',
     places: ['Mangaluru', 'Dharwad', 'Mysuru', 'Ballari'],
-    img: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=1000&auto=format&fit=crop'
+    img: '/images/themes/theme_cuisine.jpg'
   }
 };
 
@@ -117,7 +117,7 @@ const Home = () => {
         {/* Background photo with cinematic multi-stop gradient */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transform transition-transform duration-1000"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop)' }}
+          style={{ backgroundImage: 'url(/images/places/district_22_mysuru_palace.jpg)' }}
         ></div>
         
         {/* Dark filmic gradient overlay */}
@@ -467,7 +467,7 @@ const Home = () => {
                   {/* Card Thumbnail */}
                   <div className="relative h-64 overflow-hidden">
                     <img
-                      src={destination.images?.[0] || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500'}
+                      src={destination.images?.[0] || '/images/places/district_29_hampi.jpg'}
                       alt={destination.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />

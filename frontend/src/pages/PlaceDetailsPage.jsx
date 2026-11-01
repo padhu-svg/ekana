@@ -97,7 +97,7 @@ const PlaceDetailsPage = () => {
         >
           <div className="h-96 relative">
             <img
-              src={placeData.images?.[0] || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200'}
+              src={placeData.images?.[0] || '/images/places/district_29_hampi.jpg'}
               alt={placeData.name}
               className="w-full h-full object-cover"
             />

@@ -13,7 +13,7 @@ const Blog = () => {
       author: 'Priya Sharma', 
       date: 'Oct 12, 2024', 
       readTime: '6 min read',
-      img: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800', 
+      img: '/images/places/district_1_badami.jpg', 
       category: 'Heritage', 
       snippet: 'Beyond Hampi, the Chalukyan circuit through Badami, Aihole, and Pattadakal offers a profound masterclass in early Deccan rock-cut sculpture and temple architecture.',
       content: `The red sandstone bluffs around Agastya Lake in Badami glow like embers in the late afternoon sun. Here, carved into sheer rock faces in the 6th century, the Early Chalukyas birthed an architectural dialect that would influence temple architecture across the Indian subcontinent for a millennium.\n\nWhile millions visit the vast UNESCO ruins of Hampi each year, the Chalukyan heartland—stretching between Badami, Aihole, and Pattadakal—remains an introspective, serene masterclass. Aihole alone houses over 120 stone temples dating from the 4th to the 12th century, serving as an ancient open-air design laboratory where artisans experimented with curved shikhara towers, intricate stepped apsidal halls, and stone lattice windows.\n\nAt Pattadakal, a designated UNESCO World Heritage Site along the sacred Malaprabha River, northern Nagara and southern Dravidian temple styles stand side-by-side in harmonious coexistence. To walk these quiet stone corridors at sunrise is to witness the very dawn of classical Deccan temple engineering.`
@@ -24,7 +24,7 @@ const Blog = () => {
       author: 'Rahul Desai', 
       date: 'Oct 05, 2024', 
       readTime: '5 min read',
-      img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800', 
+      img: '/images/themes/theme_hills.jpg', 
       category: 'Eco-Tourism', 
       snippet: 'Discover how fourth-generation coffee planters in Kodagu are pioneering low-impact regenerative hospitality that shelters native birds and protects shola forests.',
       content: `In the misty high-elevation plantations of Kodagu, coffee is not grown on cleared land; it thrives beneath a multi-tiered canopy of native silver oaks, wild figs, and rosewood trees. This shade-grown method preserves the delicate microclimate essential for endemic hornbills, giant Malabar squirrels, and hundreds of butterfly species.\n\nToday, a forward-thinking generation of Kodava planters is opening their ancestral estate bungalows to mindful travelers. These certified eco-homestays operate completely off rainwater harvesting, generate solar power, and serve farm-to-fork meals prepared with organic estate herbs, bamboo shoots, and wild forest honey.\n\nBy staying directly with host families rather than impersonal commercial resorts, travelers actively finance private wildlife corridors, prevent soil erosion on steep slopes, and keep Kodava cultural lore alive.`
@@ -35,7 +35,7 @@ const Blog = () => {
       author: 'Meera N.', 
       date: 'Sep 28, 2024', 
       readTime: '4 min read',
-      img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800', 
+      img: '/images/themes/theme_coast.jpg', 
       category: 'Cuisine', 
       snippet: 'From rich Kundapura Masala and Mangaluru Ghee Roast to delicate steamed Neer Dosas and coastal coconut curries, taste the coastal soul of Karnataka.',
       content: `Karnataka's 320-kilometer Arabian Sea coastline—known locally as Karavali—is one of India’s most distinctive and sophisticated culinary landscapes. Defined by the holy trinity of coconut, Byadgi chilies, and sour tamarind or kokum, every town along the coast boasts its own fiercely preserved culinary traditions.\n\nIn Kundapura, whole spices are roasted over wood embers to produce the legendary chicken and paneer ghee roasts. Further south in Mangaluru, the Bunt and Catholic communities create delicate steamed lace-like Neer Dosas, accompanied by spicy coconut-rich fish curries simmered in clay pots.\n\nEven breakfast is an art form: from turmeric-infused Semige noodles to Jackfruit idlis steamed in banana leaves, Karavali cooking reflects a profound harmony with monsoon rhythms and ocean seasons.`
@@ -46,7 +46,7 @@ const Blog = () => {
       author: 'Arjun K.', 
       date: 'Sep 20, 2024', 
       readTime: '7 min read',
-      img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800', 
+      img: '/images/themes/theme_hills.jpg', 
       category: 'Hills & Adventure', 
       snippet: 'A mindful guide to forest permits, eco-code etiquette, and the breathtaking rolling green horizons of one of South India’s most strictly protected national parks.',
       content: `Rising to 1,894 meters like the distinct profile of a horse's face, Kudremukh is Karnataka's second-highest peak and the crown jewel of the Western Ghats. It represents one of the world's finest remaining high-altitude shola-grassland ecosystems, where emerald meadows roll endlessly across mountain ridges punctuated by dense evergreen forest ravines.\n\nBecause Kudremukh is a strictly protected national park and tiger reserve, tourist footfall is legally restricted to just 50 permits per day. Trekking here requires advance online forest department registration and adherence to a strict zero-plastic protocol.\n\nThe 22-kilometer round trip ascends through babbling mountain streams, leeches in the monsoon, and mist-laden ridges where wild sambar deer and lion-tailed macaques roam freely. The reward at the summit is an awe-inspiring 360-degree vista of clouds swirling over the Sahyadri range.`

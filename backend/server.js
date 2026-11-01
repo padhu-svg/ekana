@@ -14,8 +14,13 @@ app.use(cors({
   credentials: true
 }));
 
+const path = require('path');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static images from frontend/public/images
+app.use('/images', express.static(path.join(__dirname, '../frontend/public/images')));
 
 // Rate limiting
 const limiter = rateLimit({

@@ -102,7 +102,7 @@ const PlaceDetails = () => {
       {/* Hero Visual Header */}
       <div className="relative h-[55vh] min-h-[380px] bg-[#2A363B] overflow-hidden">
         <img
-          src={place.images?.[0] || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920'}
+          src={place.images?.[0] || '/images/places/district_29_hampi.jpg'}
           alt={place.name}
           className="w-full h-full object-cover opacity-85"
         />
