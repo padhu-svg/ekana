@@ -1,21 +1,48 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, MapPin, Users, Sparkles, Navigation, Clock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar, MapPin, Users, Sparkles, Navigation, Clock, CheckCircle2, ArrowRight, ArrowLeft, ArrowUpRight, Compass } from 'lucide-react';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+
+const ALL_DISTRICTS = [
+  'Bagalkote', 'Ballari', 'Belagavi', 'Bengaluru Rural', 'Bengaluru Urban', 
+  'Bidar', 'Chamarajanagara', 'Chikkaballapura', 'Chikkamagaluru', 'Chitradurga', 
+  'Dakshina Kannada', 'Davanagere', 'Dharwad', 'Gadag', 'Hassan', 
+  'Haveri', 'Kalaburagi', 'Kodagu (Coorg)', 'Kolar', 'Koppal', 
+  'Mandya', 'Mysuru', 'Raichur', 'Ramanagara', 'Shivamogga', 
+  'Tumakuru', 'Udupi', 'Uttara Kannada', 'Vijayanagara (Hampi)', 'Vijayapura', 'Yadgir'
+];
 
 const PlanTrip = () => {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [itinerary, setItinerary] = useState(null);
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+
+  const districtParam = searchParams.get('district') || location.state?.district;
+  const initialDistrict = districtParam
+    ? (ALL_DISTRICTS.find(d => d.toLowerCase().includes(districtParam.toLowerCase()) || districtParam.toLowerCase().includes(d.toLowerCase())) || districtParam)
+    : 'Chikkamagaluru';
   
   const [formData, setFormData] = useState({
-    destination: '',
+    destination: initialDistrict,
     duration: '3',
     travelers: '2',
-    interests: []
+    interests: ['Heritage', 'Nature & Hills']
   });
 
-  const interestsList = ['Heritage', 'Nature & Hills', 'Wildlife', 'Beaches', 'Culture & Cuisine', 'Temples'];
+  useEffect(() => {
+    if (districtParam) {
+      const match = ALL_DISTRICTS.find(d => d.toLowerCase().includes(districtParam.toLowerCase()) || districtParam.toLowerCase().includes(d.toLowerCase())) || districtParam;
+      setFormData(prev => ({ ...prev, destination: match }));
+    }
+  }, [districtParam]);
+
+  const interestsList = [
+    'Heritage & UNESCO', 'Nature & Hills', 'Wildlife Reserves', 
+    'Karavali Coast', 'Culture & Crafts', 'Temple Circuits', 'Organic Food & Farms'
+  ];
 
   const handleInterestToggle = (interest) => {
     setFormData(prev => ({
@@ -28,110 +55,146 @@ const PlanTrip = () => {
 
   const generateItinerary = () => {
     setLoading(true);
-    // Simulate AI generation delay
     setTimeout(() => {
       setItinerary([
         {
           day: 1,
-          title: 'Arrival & Local Exploration',
+          title: `Arrival & Natural Landscape of ${formData.destination}`,
           activities: [
-            { time: '10:00 AM', desc: 'Arrive and check into your sustainable eco-stay.' },
-            { time: '01:00 PM', desc: 'Traditional Karnataka Thali lunch.' },
-            { time: '04:00 PM', desc: 'Guided walking tour of the local heritage district.' }
+            { time: '09:30 AM', desc: 'Check in to a certified sustainable eco-homestay nestled amidst native flora.' },
+            { time: '01:00 PM', desc: 'Authentic local lunch with traditional organic recipes and seasonal farm produce.' },
+            { time: '03:30 PM', desc: 'Guided orientation walk through local village plantations and community landmarks.' },
+            { time: '06:30 PM', desc: 'Scenic sunset viewpoint followed by an evening cultural storytelling session.' }
           ]
         },
         {
           day: 2,
-          title: 'Deep Dive into Culture',
+          title: 'Deep Heritage & Nature Trail',
           activities: [
-            { time: '09:00 AM', desc: 'Morning visit to historic temples and monuments.' },
-            { time: '02:00 PM', desc: 'Artisan village visit - interact with local craftsmen.' },
-            { time: '06:00 PM', desc: 'Sunset viewpoint and evening cultural performance.' }
+            { time: '07:00 AM', desc: 'Early morning guided biodiversity bird-watching walk or ancient stone trail.' },
+            { time: '11:00 AM', desc: 'Explore historic monuments, stone carvings, or mountain viewpoints with a certified guide.' },
+            { time: '02:30 PM', desc: 'Interactive workshop with regional artisans (handlooms, pottery, or wood carving).' },
+            { time: '07:00 PM', desc: 'Traditional dinner featuring regional specialties like Jolada Rotti or fresh Neer Dosa.' }
           ]
         },
         {
           day: 3,
-          title: 'Nature & Departure',
+          title: 'Local Markets & Mindful Departure',
           activities: [
-            { time: '06:00 AM', desc: 'Early morning nature trail and bird watching.' },
-            { time: '11:00 AM', desc: 'Visit local markets for souvenirs.' },
-            { time: '02:00 PM', desc: 'Departure.' }
+            { time: '08:30 AM', desc: 'Visit local farmers market to support direct-from-source spices, coffee, and honey.' },
+            { time: '11:30 AM', desc: 'Final scenic spot and reflective photo stop before checkout.' },
+            { time: '02:00 PM', desc: 'Departure with memorable, low-impact memories of Karnataka.' }
           ]
         }
       ]);
       setLoading(false);
       setStep(3);
-    }, 2000);
+    }, 1400);
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F1DE] pt-8 pb-20 font-sans">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-[#2A363B] font-heading mb-4">Smart Itinerary Builder</h1>
-          <p className="text-lg text-gray-600">Let our AI craft the perfect Karnataka experience based on your preferences.</p>
+    <div className="min-h-screen bg-[#F4F1DE]/40 font-sans text-gray-900 pb-24">
+      
+      {/* Top Banner */}
+      <section className="bg-[#2A363B] text-white py-14 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute -top-16 -right-16 w-80 h-80 rounded-full bg-[#E07A5F]/15 blur-3xl pointer-events-none"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <span className="eyebrow-pill bg-white/10 text-[#81B29A] border-white/15 mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#E07A5F]" /> AI Travel Companion
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight mb-2">
+            Smart Karnataka Itinerary Builder
+          </h1>
+          <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto">
+            Personalize a day-by-day travel plan curated with verified routes, eco-homestays, and local certified guides.
+          </p>
         </div>
+      </section>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+        
+        {/* Main Card */}
+        <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-10 border border-gray-100">
           
-          {/* Progress Bar */}
-          <div className="flex items-center justify-between mb-8">
-            <div className={`flex-1 h-2 rounded-full ${step >= 1 ? 'bg-[#81B29A]' : 'bg-gray-200'}`}></div>
-            <div className="px-4 text-sm font-semibold text-gray-500">Step {step} of 3</div>
-            <div className={`flex-1 h-2 rounded-full ${step >= 2 ? 'bg-[#81B29A]' : 'bg-gray-200'}`}></div>
-            <div className="px-4 text-sm font-semibold text-gray-500"></div>
-            <div className={`flex-1 h-2 rounded-full ${step >= 3 ? 'bg-[#81B29A]' : 'bg-gray-200'}`}></div>
+          {/* Progress Steps Header */}
+          <div className="grid grid-cols-3 gap-2 mb-8 pb-6 border-b border-gray-100">
+            <div className={`flex flex-col items-center text-center pb-2 border-b-2 transition-colors ${
+              step >= 1 ? 'border-[#E07A5F] text-[#E07A5F]' : 'border-gray-200 text-gray-400'
+            }`}>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider">Step 01</span>
+              <span className="text-xs font-semibold hidden sm:inline text-gray-800">Destination</span>
+            </div>
+            
+            <div className={`flex flex-col items-center text-center pb-2 border-b-2 transition-colors ${
+              step >= 2 ? 'border-[#3D5A80] text-[#3D5A80]' : 'border-gray-200 text-gray-400'
+            }`}>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider">Step 02</span>
+              <span className="text-xs font-semibold hidden sm:inline text-gray-800">Interests</span>
+            </div>
+
+            <div className={`flex flex-col items-center text-center pb-2 border-b-2 transition-colors ${
+              step >= 3 ? 'border-[#81B29A] text-[#81B29A]' : 'border-gray-200 text-gray-400'
+            }`}>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider">Step 03</span>
+              <span className="text-xs font-semibold hidden sm:inline text-gray-800">Itinerary</span>
+            </div>
           </div>
 
           {/* STEP 1: Basic Details */}
           {step === 1 && (
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-              <h2 className="text-2xl font-bold text-[#2A363B] mb-6">Tell us about your trip</h2>
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+              <h2 className="text-2xl font-extrabold text-[#2A363B] font-heading mb-1">
+                Where would you like to travel?
+              </h2>
+              <p className="text-xs text-gray-500 mb-6">Select from all 31 districts or choose a surprise circuit.</p>
               
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Where do you want to go?</label>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">
+                    Target District / Region
+                  </label>
                   <div className="relative">
-                    <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                    <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-[#E07A5F] h-5 w-5" />
                     <select 
                       value={formData.destination}
                       onChange={(e) => setFormData({...formData, destination: e.target.value})}
-                      className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#E07A5F] focus:outline-none"
+                      className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#E07A5F] focus:outline-none font-semibold text-sm"
                     >
-                      <option value="">Select a District (e.g. Mysuru, Hampi)</option>
-                      <option value="Mysuru">Mysuru</option>
-                      <option value="Hampi">Hampi (Vijayanagara)</option>
-                      <option value="Kodagu">Coorg (Kodagu)</option>
-                      <option value="Dakshina Kannada">Dakshina Kannada</option>
-                      <option value="Chikkamagaluru">Chikkamagaluru</option>
-                      <option value="Anywhere">Surprise Me! (Anywhere in Karnataka)</option>
+                      <option value="">Select a District</option>
+                      {ALL_DISTRICTS.map((dist) => (
+                        <option key={dist} value={dist}>{dist}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Duration (Days)</label>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">
+                      Duration (Days)
+                    </label>
                     <div className="relative">
-                      <Calendar className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                      <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-[#3D5A80] h-5 w-5" />
                       <input 
                         type="number" min="1" max="14"
                         value={formData.duration}
                         onChange={(e) => setFormData({...formData, duration: e.target.value})}
-                        className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#E07A5F] focus:outline-none"
+                        className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#3D5A80] focus:outline-none font-semibold text-sm"
                       />
                     </div>
                   </div>
+
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Number of Travelers</label>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">
+                      Number of Travelers
+                    </label>
                     <div className="relative">
-                      <Users className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                      <Users className="absolute left-4 top-1/2 -translate-y-1/2 text-[#81B29A] h-5 w-5" />
                       <input 
                         type="number" min="1" max="20"
                         value={formData.travelers}
                         onChange={(e) => setFormData({...formData, travelers: e.target.value})}
-                        className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#E07A5F] focus:outline-none"
+                        className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#81B29A] focus:outline-none font-semibold text-sm"
                       />
                     </div>
                   </div>
@@ -140,93 +203,117 @@ const PlanTrip = () => {
                 <button 
                   onClick={() => setStep(2)}
                   disabled={!formData.destination}
-                  className="w-full mt-8 bg-[#E07A5F] hover:bg-[#D0694E] text-white py-4 rounded-xl font-bold text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="btn-primary w-full justify-center text-sm py-3.5 mt-6 disabled:opacity-50"
                 >
-                  Next Step
+                  <span>Continue to Interests</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </motion.div>
           )}
 
-          {/* STEP 2: Interests */}
+          {/* STEP 2: Interests Selection */}
           {step === 2 && (
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-              <h2 className="text-2xl font-bold text-[#2A363B] mb-2">What interests you?</h2>
-              <p className="text-gray-500 mb-6">Select all that apply to personalize your itinerary.</p>
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+              <h2 className="text-2xl font-extrabold text-[#2A363B] font-heading mb-1">
+                What kind of experience do you seek?
+              </h2>
+              <p className="text-xs text-gray-500 mb-6">Select all themes you would like included in your itinerary.</p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                {interestsList.map(interest => (
-                  <button
-                    key={interest}
-                    onClick={() => handleInterestToggle(interest)}
-                    className={`p-4 rounded-xl border-2 font-semibold transition-all ${
-                      formData.interests.includes(interest)
-                        ? 'border-[#3D5A80] bg-[#3D5A80]/10 text-[#3D5A80]'
-                        : 'border-gray-200 text-gray-600 hover:border-[#3D5A80]/50'
-                    }`}
-                  >
-                    {interest}
-                  </button>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                {interestsList.map(interest => {
+                  const isSelected = formData.interests.includes(interest);
+                  return (
+                    <button
+                      key={interest}
+                      type="button"
+                      onClick={() => handleInterestToggle(interest)}
+                      className={`p-3.5 rounded-2xl border text-left transition-all duration-200 flex items-center justify-between text-xs font-bold ${
+                        isSelected
+                          ? 'border-[#3D5A80] bg-[#3D5A80] text-white shadow-xs'
+                          : 'border-gray-200 bg-gray-50 text-gray-700 hover:bg-white hover:border-gray-300'
+                      }`}
+                    >
+                      <span>{interest}</span>
+                      {isSelected && <CheckCircle2 className="w-4 h-4 text-white" />}
+                    </button>
+                  );
+                })}
               </div>
 
-              <div className="flex space-x-4">
+              <div className="flex items-center gap-3">
                 <button 
                   onClick={() => setStep(1)}
-                  className="w-1/3 py-4 rounded-xl border-2 border-gray-200 text-gray-600 font-bold hover:bg-gray-50 transition-colors"
+                  className="w-1/3 py-3 rounded-full border border-gray-300 text-gray-700 font-bold text-xs hover:bg-gray-50 transition-colors inline-flex items-center justify-center gap-1.5"
                 >
-                  Back
+                  <ArrowLeft className="w-3.5 h-3.5" /> Back
                 </button>
                 <button 
                   onClick={generateItinerary}
-                  className="w-2/3 bg-[#81B29A] hover:bg-[#63927A] text-white py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center"
+                  className="w-2/3 btn-primary justify-center text-xs py-3"
                 >
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Generate Magic Itinerary
+                  <Sparkles className="w-4 h-4" />
+                  <span>Generate AI Itinerary</span>
                 </button>
               </div>
             </motion.div>
           )}
 
-          {/* Loading State */}
+          {/* Loading Animation */}
           {loading && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-12 text-center">
-              <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-[#E07A5F] mx-auto mb-6"></div>
-              <h3 className="text-2xl font-bold text-[#2A363B] mb-2">Crafting your perfect trip...</h3>
-              <p className="text-gray-500">Our AI is analyzing routes, local experiences, and eco-stays.</p>
-            </motion.div>
+            <div className="py-16 text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-2 border-[#E07A5F] border-t-transparent mx-auto mb-4"></div>
+              <h3 className="text-xl font-bold text-[#2A363B] font-heading mb-1">Analyzing Karnataka Circuits...</h3>
+              <p className="text-xs text-gray-500">Checking verified route distances, heritage timings, and eco-homestays.</p>
+            </div>
           )}
 
-          {/* STEP 3: Result */}
+          {/* STEP 3: Generated Itinerary View */}
           {step === 3 && itinerary && (
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-100">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+              
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 pb-6 border-b border-gray-100">
                 <div>
-                  <h2 className="text-3xl font-bold text-[#2A363B] font-heading mb-2">Your {formData.duration}-Day EKaNa Experience</h2>
-                  <p className="text-[#E07A5F] font-semibold flex items-center">
-                    <MapPin className="w-4 h-4 mr-1" /> {formData.destination} &bull; {formData.travelers} Travelers
+                  <span className="eyebrow-pill bg-[#81B29A]/15 text-[#63927A] border-[#81B29A]/30 mb-2">
+                    Custom Generated Plan
+                  </span>
+                  <h2 className="text-2xl font-extrabold text-[#2A363B] font-heading">
+                    {formData.duration}-Day {formData.destination} Journey
+                  </h2>
+                  <p className="text-xs text-gray-500 mt-1">
+                    {formData.travelers} Travelers • Tailored for {formData.interests.join(', ')}
                   </p>
                 </div>
-                <button onClick={() => setStep(1)} className="text-[#3D5A80] font-semibold hover:underline">
-                  Start Over
+                
+                <button 
+                  onClick={() => setStep(1)} 
+                  className="text-xs font-bold text-[#E07A5F] hover:underline self-start sm:self-auto"
+                >
+                  Edit Preferences
                 </button>
               </div>
 
+              {/* Day-by-Day Timeline */}
               <div className="space-y-8">
                 {itinerary.map((day, idx) => (
-                  <div key={idx} className="relative pl-8 border-l-2 border-[#81B29A]/30">
-                    <div className="absolute -left-3 top-0 bg-[#81B29A] text-white w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">
+                  <div key={idx} className="relative pl-6 sm:pl-8 border-l-2 border-[#81B29A]/30">
+                    <div className="absolute -left-3.5 top-0 bg-[#81B29A] text-white w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs shadow-xs">
                       {day.day}
                     </div>
-                    <h3 className="text-xl font-bold text-[#2A363B] mb-4">{day.title}</h3>
-                    <div className="space-y-4">
+                    
+                    <h3 className="text-base sm:text-lg font-bold text-[#2A363B] font-heading mb-3">
+                      Day {day.day}: {day.title}
+                    </h3>
+
+                    <div className="space-y-2.5">
                       {day.activities.map((act, i) => (
-                        <div key={i} className="bg-gray-50 rounded-xl p-4 flex items-start border border-gray-100">
-                          <Clock className="w-5 h-5 text-[#3D5A80] mr-3 shrink-0 mt-0.5" />
-                          <div>
-                            <span className="font-semibold text-gray-800 block mb-1">{act.time}</span>
-                            <span className="text-gray-600">{act.desc}</span>
-                          </div>
+                        <div key={i} className="bg-gray-50 hover:bg-gray-100/70 transition-colors rounded-2xl p-3.5 flex items-start border border-gray-100 gap-3">
+                          <span className="bg-[#3D5A80]/10 text-[#3D5A80] text-[11px] font-bold px-2 py-1 rounded-md shrink-0 mt-0.5">
+                            {act.time}
+                          </span>
+                          <span className="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                            {act.desc}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -234,19 +321,26 @@ const PlanTrip = () => {
                 ))}
               </div>
 
-              <div className="mt-10 p-6 bg-[#3D5A80]/10 rounded-2xl border border-[#3D5A80]/20 flex flex-col sm:flex-row items-center justify-between">
-                <div className="mb-4 sm:mb-0">
-                  <h4 className="font-bold text-[#2A363B] text-lg">Ready to make this a reality?</h4>
-                  <p className="text-gray-600 text-sm">Connect with verified local guides and sustainable stays.</p>
+              {/* Call to Action Box */}
+              <div className="mt-10 p-6 bg-[#3D5A80] text-white rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                  <h4 className="font-bold text-base font-heading">Connect with Verified Hosts</h4>
+                  <p className="text-white/75 text-xs">Book local homestays and certified guides for this route.</p>
                 </div>
-                <button className="bg-[#3D5A80] hover:bg-[#293E58] text-white px-6 py-3 rounded-xl font-semibold transition-colors flex items-center shrink-0">
-                  <Navigation className="w-4 h-4 mr-2" /> Book This Itinerary
+                <button 
+                  onClick={() => navigate('/community')}
+                  className="btn-primary text-xs py-2.5 px-5 shrink-0"
+                >
+                  <span>Explore Homestays</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </button>
               </div>
+
             </motion.div>
           )}
 
         </div>
+
       </div>
     </div>
   );

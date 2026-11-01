@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Search, X } from 'lucide-react';
+import { Search, X, Sparkles, ArrowRight } from 'lucide-react';
 import { destinationsAPI } from '../services/api';
+
+const TRENDING_TAGS = ['Hampi', 'Coorg', 'Gokarna', 'Badami', 'Mysuru'];
 
 const SearchBar = ({ onResults }) => {
   const [query, setQuery] = useState('');
@@ -17,12 +19,12 @@ const SearchBar = ({ onResults }) => {
       const response = await destinationsAPI.getAll();
       const allPlaces = response.data || [];
       
-      // Filter places based on search query
+      const q = searchQuery.toLowerCase();
       const filteredPlaces = allPlaces.filter(place => 
-        place.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        place.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        place.district.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        place.description.toLowerCase().includes(searchQuery.toLowerCase())
+        (place.name && place.name.toLowerCase().includes(q)) ||
+        (place.category && place.category.toLowerCase().includes(q)) ||
+        (place.district && place.district.toLowerCase().includes(q)) ||
+        (place.description && place.description.toLowerCase().includes(q))
       );
       
       onResults(filteredPlaces);
@@ -45,31 +47,68 @@ const SearchBar = ({ onResults }) => {
     onResults([]);
   };
 
+  const handleTagClick = (tag) => {
+    setQuery(tag);
+    handleSearch(tag);
+  };
+
   return (
-    <div className="relative max-w-2xl mx-auto">
-      <div className="relative">
-        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white h-5 w-5" />
+    <div className="relative max-w-2xl mx-auto w-full">
+      {/* Floating Capsule Input */}
+      <div className="relative flex items-center bg-white/95 backdrop-blur-md rounded-full shadow-2xl border border-white/50 p-1.5 transition-all duration-300 focus-within:ring-2 focus-within:ring-[#E07A5F]/50 focus-within:bg-white">
+        <div className="w-10 h-10 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] flex items-center justify-center shrink-0 ml-1">
+          <Search className="h-4 w-4" />
+        </div>
+        
         <input
           type="text"
           value={query}
           onChange={handleInputChange}
-          placeholder="Search for places in Karnataka..."
-          className="w-full pl-12 pr-4 py-4 text-lg text-white placeholder-gray-300 bg-transparent border-2 border-gray-200 rounded-full focus:border-green-500 focus:outline-none shadow-lg"
+          placeholder="Search 31 districts, heritage temples, hill trails..."
+          className="w-full px-3 py-2 text-base text-gray-900 placeholder:text-gray-400 bg-transparent border-none focus:outline-none font-medium"
         />
+
         {query && (
           <button
             onClick={clearSearch}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-400 hover:text-gray-600"
+            className="p-1.5 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors mr-1"
+            aria-label="Clear search"
           >
-            <X className="h-6 w-6" />
+            <X className="h-4 w-4" />
+          </button>
+        )}
+
+        {loading ? (
+          <div className="w-9 h-9 flex items-center justify-center shrink-0 mr-1">
+            <div className="animate-spin rounded-full h-4 w-4 border-2 border-[#E07A5F] border-t-transparent"></div>
+          </div>
+        ) : (
+          <button
+            onClick={() => handleSearch(query)}
+            className="hidden sm:inline-flex items-center gap-1.5 bg-[#2A363B] hover:bg-[#3D5A80] text-white text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shrink-0 shadow-xs mr-1"
+          >
+            <span>Search</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         )}
       </div>
-      {loading && (
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-600"></div>
-        </div>
-      )}
+
+      {/* Trending Search Chips */}
+      <div className="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs">
+        <span className="text-white/70 font-medium inline-flex items-center gap-1">
+          <Sparkles className="w-3 h-3 text-[#E07A5F]" /> Trending:
+        </span>
+        {TRENDING_TAGS.map((tag) => (
+          <button
+            key={tag}
+            type="button"
+            onClick={() => handleTagClick(tag)}
+            className="bg-white/10 hover:bg-white/20 text-white/90 border border-white/20 px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105"
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

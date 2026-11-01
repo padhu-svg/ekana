@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Manrope:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -10,32 +10,57 @@
   --color-brand-green: #81B29A;
   --color-brand-green-dark: #63927A;
   --color-brand-dark: #2A363B;
-  --font-sans: 'Poppins', 'Mukta', 'Noto Sans Kannada', sans-serif;
-  --font-heading: 'Mukta', 'Noto Sans Kannada', sans-serif;
+  --font-sans: 'Manrope', 'DM Sans', 'Poppins', 'Noto Sans Kannada', sans-serif;
+  --font-heading: 'Manrope', 'Mukta', 'Noto Sans Kannada', sans-serif;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-scroll {
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.animate-marquee-scroll:hover {
+  animation-play-state: paused;
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-[var(--color-brand-terracotta)] hover:bg-[var(--color-brand-terracotta-dark)] text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+    @apply bg-[var(--color-brand-terracotta)] hover:bg-[var(--color-brand-terracotta-dark)] text-white px-7 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-95 inline-flex items-center gap-2;
   }
   
   .btn-secondary {
-    @apply bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+    @apply bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white px-7 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply border border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 inline-flex items-center gap-2;
   }
   
   .card {
-    @apply bg-[var(--color-brand-sand)] rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100;
+    @apply bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100;
   }
   
   .hero-gradient {
-    @apply bg-gradient-to-br from-[var(--color-brand-dark)] via-[var(--color-brand-blue-dark)] to-[var(--color-brand-green-dark)];
+    @apply bg-gradient-to-br from-[var(--color-brand-dark)] via-[#1F2937] to-[var(--color-brand-blue-dark)];
   }
   
   .text-gradient {
     @apply bg-gradient-to-r from-[var(--color-brand-terracotta)] to-[var(--color-brand-terracotta-dark)] bg-clip-text text-transparent;
   }
   
-  .category-card {
-    @apply bg-white rounded-2xl p-6 hover:bg-[var(--color-brand-sand)] transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-xl border border-gray-100;
+  .eyebrow-pill {
+    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase border;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
